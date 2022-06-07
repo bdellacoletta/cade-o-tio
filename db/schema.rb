@@ -10,10 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_07_191150) do
+ActiveRecord::Schema.define(version: 2022_06_07_194305) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "itineraries", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "current_sequence"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_itineraries_on_user_id"
+  end
+
+  create_table "students", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "child_name"
+    t.string "child_address"
+    t.integer "sequence"
+    t.string "parents_name"
+    t.string "parents_email"
+    t.bigint "itinerary_id", null: false
+    t.string "token"
+    t.index ["itinerary_id"], name: "index_students_on_itinerary_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +44,19 @@ ActiveRecord::Schema.define(version: 2022_06_07_191150) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "home_address"
+    t.string "school_address"
+    t.string "car_model"
+    t.string "car_plate"
+    t.string "car_color"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "itineraries", "users"
+  add_foreign_key "students", "itineraries"
 end
