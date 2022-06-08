@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2022_06_08_201721) do
   create_table "students", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "child_name"   
+    t.string "child_name"
     t.string "child_address"
     t.integer "sequence"
     t.string "parents_name"
