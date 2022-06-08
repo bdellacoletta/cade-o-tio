@@ -5,5 +5,5 @@ class Student < ApplicationRecord
   validates :parents_email, format: { with: /\S+@\S+\.\S+/ }
 
   geocoded_by :child_address
-  after_validation :geocode, if: :will_save_change_to_address?
+  after_validation :geocode, if: :will_save_change_to_child_address?
 end
