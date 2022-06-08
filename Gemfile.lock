@@ -1,4 +1,12 @@
 GIT
+  remote: https://github.com/faker-ruby/faker.git
+  revision: 425581295d59839e1c4c19a0f4482886d1e9f373
+  branch: master
+  specs:
+    faker (2.21.0)
+      i18n (>= 1.8.11, < 2)
+
+GIT
   remote: https://github.com/heartcombo/simple_form.git
   revision: 23205201a935c7e52c39549756e2ec2e2ec47793
   specs:
@@ -128,6 +136,8 @@ GEM
     minitest (5.15.0)
     msgpack (1.5.2)
     nio4r (2.5.8)
+    nokogiri (1.13.6-x86_64-darwin)
+      racc (~> 1.4)
     nokogiri (1.13.6-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
@@ -243,8 +253,8 @@ GEM
     zeitwerk (2.5.4)
 
 PLATFORMS
-  x86_64-linux
   x86_64-darwin-21
+  x86_64-linux
 
 DEPENDENCIES
   autoprefixer-rails (= 10.2.5)
@@ -253,6 +263,7 @@ DEPENDENCIES
   capybara (>= 3.26)
   devise
   dotenv-rails
+  faker!
   font-awesome-sass (~> 5.6.1)
   jbuilder (~> 2.7)
   listen (~> 3.3)

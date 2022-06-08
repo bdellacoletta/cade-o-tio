@@ -15,7 +15,7 @@ class StudentsController < ApplicationController
   end
 
   def create
-    @student = Student.new
+    @student = Student.new(student_params)
     @student.itinerary = @itinerary
     if @student.save
       redirect_to itinerary_students
