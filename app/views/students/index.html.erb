@@ -8,18 +8,20 @@
           <%= link_to student_path(student), class: 'student-index-link' do %>
             <div class="card-product-student-index mt-3">
               <img src="https://images.unsplash.com/photo-1629872430082-93d8912beccf" />
-              <div class="card-product-infos-student-index">
-                <h2><%= student.child_name %></h2>
-                <p><%= student.child_address %></p>
-              </div>
-              <div class="card-product-infos-student-index-seq">
-                <h2><%= student.sequence %></h2>
+              <div class="card-product-infos-student d-flex">
+                <div class="card-product-infos-student-index">
+                  <h2><%= student.child_name %></h2>
+                  <p><%= student.child_address %></p>
+                </div>
+                <div class="card-product-infos-student-index-seq">
+                  <h2><%= student.sequence %></h2>
+                </div>
               </div>
             </div>
           <% end %>
         <% end %>
       </div>
-      <div>
+      <div class="d-flex justify-content-center">
         <%= link_to 'Gerar itinerário', '#', class: 'btn btn-primary mt-5' %>
       </div>
     </div>
