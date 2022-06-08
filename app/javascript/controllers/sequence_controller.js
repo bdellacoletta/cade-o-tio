@@ -6,6 +6,7 @@ export default class extends Controller {
   saveSequence(attributes) {
     console.log(attributes)
   };
+  
   connect() {
     this.passengerTargets.forEach((passenger) => {
       new Sortable(passenger, {
