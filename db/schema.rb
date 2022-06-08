@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_07_194305) do
+ActiveRecord::Schema.define(version: 2022_06_08_201721) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,8 @@ ActiveRecord::Schema.define(version: 2022_06_07_194305) do
     t.string "parents_email"
     t.bigint "itinerary_id", null: false
     t.string "token"
+    t.float "latitude_child"
+    t.float "longitude_child"
     t.index ["itinerary_id"], name: "index_students_on_itinerary_id"
   end
 
@@ -53,6 +55,10 @@ ActiveRecord::Schema.define(version: 2022_06_07_194305) do
     t.string "car_color"
     t.float "latitude"
     t.float "longitude"
+    t.float "latitude_home"
+    t.float "longitude_home"
+    t.float "latitude_school"
+    t.float "longitude_school"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
