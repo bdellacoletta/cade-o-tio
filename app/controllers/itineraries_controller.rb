@@ -23,7 +23,7 @@ class ItinerariesController < ApplicationController
     @markers <<
       {
       lat: @itinerary.user.latitude_school,
-      lng: @itinerary.user.longitue_school,
+      lng: @itinerary.user.longitude_school,
       # info_window: render_to_string(partial: "info_window", locals: { itinerary: @itinerary }),
       # image_url: helpers.asset_url("home-icon.png")
       }
