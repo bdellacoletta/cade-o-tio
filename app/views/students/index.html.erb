@@ -8,11 +8,16 @@
           <img src="https://images.unsplash.com/photo-1629872430082-93d8912beccf" />
           <div class="card-product-infos-student-index">
             <h2>Nome do estudante</h2>
-            <p>Endereço</p>
+            <p>Endereço? Status? Ex: "está pronto", "vai se atravar"</p>
+          </div>
+          <div class="card-product-infos-student-index-seq">
+            <h2>Seq #</h2>
           </div>
         </div>
       </div>
-      <div class="button"></div>
+      <div>
+        <%= link_to 'Gerar itinerário', itinerary_path(@itinerary), class: 'btn btn-primary' %>
+      </div>
     </div>
   </div>
 </div>
