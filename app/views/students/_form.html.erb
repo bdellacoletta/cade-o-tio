@@ -1,0 +1,16 @@
+<div class="intro">
+  <h1 class="title-form">Cade o tio?</h1>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/2048px-Google_%22G%22_Logo.svg.png" alt="Logo"
+  class="logo-form">
+</div>
+
+<div class="form-child">
+  <%= simple_form_for @student do |f| %>
+  <%= f.input :child_name, label: 'Nome da criança' %>
+  <%= f.input :child_address, label: 'Endereço da criança' %>
+  <%= f.input :sequence, label: 'Sequência' %>
+  <%= f.input :parents_name, label: 'Nome do(a) responsável' %>
+  <%= f.input :parents_email, label: 'E-mail do(a) responsável' %>
+  <%= f.button :submit, value: 'Enviar', class: 'submit-button' %>
+  <% end %>
+</div>
