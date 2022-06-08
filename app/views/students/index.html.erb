@@ -1,24 +1,26 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-xs-12">
-      <div id="logo-placeholder"></div>
+      <div id="logo-placeholder" class="mt-3 align-items-center">Logo</div>
       <h1>Crianças</h1>
       <div class="cards-student-index">
         <% @students.each do |student| %>
-          <div class="card-product-student-index">
-            <img src="https://images.unsplash.com/photo-1629872430082-93d8912beccf" />
-            <div class="card-product-infos-student-index">
-              <h2>Nome do estudante</h2>
-              <p>Endereço? Status? Ex: "está pronto", "vai se atravar"</p>
+          <%= link_to student_path(student), class: 'student-index-link' do %>
+            <div class="card-product-student-index mt-3">
+              <img src="https://images.unsplash.com/photo-1629872430082-93d8912beccf" />
+              <div class="card-product-infos-student-index">
+                <h2><%= student.child_name %></h2>
+                <p><%= student.child_address %></p>
+              </div>
+              <div class="card-product-infos-student-index-seq">
+                <h2><%= student.sequence %></h2>
+              </div>
             </div>
-            <div class="card-product-infos-student-index-seq">
-              <h2>Seq #</h2>
-            </div>
-          </div>
+          <% end %>
         <% end %>
       </div>
       <div>
-        <%= link_to 'Gerar itinerário', itinerary_path(@itinerary), class: 'btn btn-primary' %>
+        <%= link_to 'Gerar itinerário', '#', class: 'btn btn-primary mt-5' %>
       </div>
     </div>
   </div>
