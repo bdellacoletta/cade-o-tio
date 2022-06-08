@@ -1,5 +1,5 @@
 class Student < ApplicationRecord
-  belongs_to :Itinerary
+  belongs_to :itinerary
 
   validates :child_name, :child_address, :sequence, :parents_name, :parents_email, presence: true
   validates :parents_email, format: { with: /\S+@\S+\.\S+/ }
