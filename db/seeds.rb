@@ -18,8 +18,25 @@ User.create(
   password: 123_123
 )
 
+User.create(
+  first_name: 'Bruno',
+  last_name: 'Teste',
+  home_address: 'Rua Fernandes',
+  school_address: 'Rua Original',
+  car_model: %w[Transit Master Ducato Kombi].sample,
+  car_plate: %w[DPG4556 DZH8423 EZE4996 EPC8893].sample,
+  car_color: %w[White Black Red Blue Purple].sample,
+  email: 'bruno@teste.com',
+  password: 123_123
+)
+
 Itinerary.create(
   current_sequence: 1,
+  user_id: User.all.ids.sample
+)
+
+Itinerary.create(
+  current_sequence: 2,
   user_id: User.all.ids.sample
 )
 
