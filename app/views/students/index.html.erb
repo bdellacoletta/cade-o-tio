@@ -4,16 +4,18 @@
       <div id="logo-pholder"></div>
       <h1>Crianças</h1>
       <div class="cards-student-index">
-        <div class="card-product-student-index">
-          <img src="https://images.unsplash.com/photo-1629872430082-93d8912beccf" />
-          <div class="card-product-infos-student-index">
-            <h2>Nome do estudante</h2>
-            <p>Endereço? Status? Ex: "está pronto", "vai se atravar"</p>
+        <% @students.each do |student| %>
+          <div class="card-product-student-index">
+            <img src="https://images.unsplash.com/photo-1629872430082-93d8912beccf" />
+            <div class="card-product-infos-student-index">
+              <h2>Nome do estudante</h2>
+              <p>Endereço? Status? Ex: "está pronto", "vai se atravar"</p>
+            </div>
+            <div class="card-product-infos-student-index-seq">
+              <h2>Seq #</h2>
+            </div>
           </div>
-          <div class="card-product-infos-student-index-seq">
-            <h2>Seq #</h2>
-          </div>
-        </div>
+        <% end %>
       </div>
       <div>
         <%= link_to 'Gerar itinerário', itinerary_path(@itinerary), class: 'btn btn-primary' %>
