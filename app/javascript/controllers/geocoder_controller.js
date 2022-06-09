@@ -4,7 +4,7 @@ import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder"
 export default class extends Controller {
   static values = { apiKey: String }
 
-  static targets = ["child_address","home_address", "school_adress"]
+  static targets = ["child_address", "home_address", "school_address"]
 
   connect() {
     this.geocoder = new MapboxGeocoder({
