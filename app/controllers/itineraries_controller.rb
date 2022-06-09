@@ -4,7 +4,7 @@ class ItinerariesController < ApplicationController
   def show
     @itinerary = Itinerary.find(params[:id])
 
-    @markers = @itinerary.students.map do |student|
+    @markers = @itinerary.students.order(:sequence).map do |student|
       {
         lat: student.latitude_child,
         lng: student.longitude_child,

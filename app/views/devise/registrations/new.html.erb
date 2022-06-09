@@ -39,10 +39,10 @@
                         required: true,
                         input_html: { autocomplete: "new-password" } %>
 
-            <%= f.input :home_address, label:"Ponto de partida", input_html: { data: { geocoder_target: "home_address" }, class: "d-none" },
+            <%= f.input :home_address, label:"Ponto de partida", input_html: { data: { geocoder_target: "address" }, class: "d-none" },
               wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } } %>
 
-            <%= f.input :school_address, label:"Ponto final", input_html: { data: { geocoder_target: "school_address" }, class: "d-none" },
+            <%= f.input :school_address, label:"Ponto final", input_html: { data: { geocoder_target: "address" }, class: "d-none" },
               wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } } %>
 
                   <%= f.input :car_model,
