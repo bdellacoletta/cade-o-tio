@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_08_201721) do
+ActiveRecord::Schema.define(version: 2022_06_09_143941) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,8 +53,6 @@ ActiveRecord::Schema.define(version: 2022_06_08_201721) do
     t.string "car_model"
     t.string "car_plate"
     t.string "car_color"
-    t.float "latitude"
-    t.float "longitude"
     t.float "latitude_home"
     t.float "longitude_home"
     t.float "latitude_school"
