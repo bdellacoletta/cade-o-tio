@@ -1,12 +1,12 @@
 import Sortable from 'sortablejs';
-import { Controller } from "stimulus"
+import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
   static targets = [ "passenger" ]
   saveSequence(attributes) {
     console.log(attributes)
   };
-  
+
   connect() {
     this.passengerTargets.forEach((passenger) => {
       new Sortable(passenger, {
