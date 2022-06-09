@@ -43,7 +43,7 @@ Itinerary.create(
 Student.create(
   child_name: 'Joãozinho',
   child_address: 'Rua Apucarana',
-  sequence: 1,
+  position: 1,
   parents_name: 'Carol',
   parents_email: 'carol@teste.com',
   itinerary_id: Itinerary.all.ids.sample
@@ -52,7 +52,7 @@ Student.create(
 Student.create(
   child_name: 'Narizinho',
   child_address: 'Rua Azevedo',
-  sequence: 2,
+  position: 2,
   parents_name: 'Lucas',
   parents_email: 'lucas@teste.com',
   itinerary_id: Itinerary.all.ids.sample
