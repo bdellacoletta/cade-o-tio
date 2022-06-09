@@ -6,54 +6,58 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create(
-  first_name: 'Branca',
-  last_name: 'Teste',
-  home_address: 'Rua Santos',
-  school_address: 'Rua Jerico',
-  car_model: %w[Transit Master Ducato Kombi].sample,
-  car_plate: %w[DPG4556 DZH8423 EZE4996 EPC8893].sample,
-  car_color: %w[White Black Red Blue Purple].sample,
-  email: 'branca@teste.com',
-  password: 123_123
-)
+# User.create(
+#   first_name: 'Branca',
+#   last_name: 'Teste',
+#   home_address: 'Rua Francisco Marengo, 111, São Paulo',
+#   school_address: 'Rua Jerico',
+#   car_model: %w[Transit Master Ducato Kombi].sample,
+#   car_plate: %w[DPG4556 DZH8423 EZE4996 EPC8893].sample,
+#   car_color: %w[White Black Red Blue Purple].sample,
+#   email: 'branca@teste.com',
+#   password: 123_123,
+#   latitude: -23.545853831460487,
+#   longitude: -46.56453038730434,
+#   latitude_home: -23.538101226902064,
+#   longitude_home: -46.55991279160375,
+#   latitude_school: -23.54007988512452,
+#   longitude_school: -46.56777934312352
+# )
 
-User.create(
-  first_name: 'Bruno',
-  last_name: 'Teste',
-  home_address: 'Rua Fernandes',
-  school_address: 'Rua Original',
-  car_model: %w[Transit Master Ducato Kombi].sample,
-  car_plate: %w[DPG4556 DZH8423 EZE4996 EPC8893].sample,
-  car_color: %w[White Black Red Blue Purple].sample,
-  email: 'bruno@teste.com',
-  password: 123_123
-)
+# User.create(
+#   first_name: 'Bruno',
+#   last_name: 'Teste',
+#   home_address: 'Rua Fernandes',
+#   school_address: 'Rua Original',
+#   car_model: %w[Transit Master Ducato Kombi].sample,
+#   car_plate: %w[DPG4556 DZH8423 EZE4996 EPC8893].sample,
+#   car_color: %w[White Black Red Blue Purple].sample,
+#   email: 'bruno@teste.com',
+#   password: 123_123,
+#   latitude_home: -23.54798223528066,
+#   longitude_home: -46.562967687304244,
+#   latitude_school: -23.547021333555954,
+#   longitude_school: -46.566039087304134
 
-Itinerary.create(
-  current_sequence: 1,
-  user_id: User.all.ids.sample
-)
+# )
 
-Itinerary.create(
-  current_sequence: 2,
-  user_id: User.all.ids.sample
-)
+# Itinerary.create(
+#   current_sequence: 1,
+#   user_id: User.all.ids.sample
+# )
 
-Student.create(
-  child_name: 'Joãozinho',
-  child_address: 'Rua Apucarana',
-  sequence: 1,
-  parents_name: 'Carol',
-  parents_email: 'carol@teste.com',
-  itinerary_id: Itinerary.all.ids.sample
-)
+# Itinerary.create(
+#   current_sequence: 2,
+#   user_id: User.all.ids.sample
+# )
 
-Student.create(
+Student.create!(
   child_name: 'Narizinho',
   child_address: 'Rua Azevedo',
   sequence: 2,
   parents_name: 'Lucas',
   parents_email: 'lucas@teste.com',
-  itinerary_id: Itinerary.all.ids.sample
+  itinerary_id: Itinerary.all.ids.sample,
+  latitude_child: -23.545423237414877,
+  longitude_child: -46.566315589157234
 )
