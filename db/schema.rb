@@ -66,12 +66,10 @@ ActiveRecord::Schema.define(version: 2022_06_09_174631) do
     t.string "car_model"
     t.string "car_plate"
     t.string "car_color"
-    t.float "latitude"
-    t.float "longitude"
     t.float "latitude_home"
     t.float "longitude_home"
     t.float "latitude_school"
-    t.float "longitue_school"
+    t.float "longitude_school"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

@@ -18,7 +18,7 @@ class StudentsController < ApplicationController
     @student = Student.new(student_params)
     @student.itinerary = @itinerary
     if @student.save
-      redirect_to itinerary_students
+      redirect_to @student
     else
       render :new
     end
@@ -29,11 +29,12 @@ class StudentsController < ApplicationController
 
   def update
     @student.update(student_params)
+    redirect_to itinerary_students_path(@student.itinerary_id)
   end
 
   def destroy
     @student.destroy
-    redirect_to itinerary_students(@itinerary)
+    redirect_to itinerary_students_path(@student.itinerary_id)
   end
 
   private
