@@ -2,7 +2,7 @@ class ItinerariesController < ApplicationController
 
 
   def show
-    @itinerary = Itinerary.find(params[:id])
+    @itinerary = Itinerary.friendly.find(params[:id])
 
     @markers = @itinerary.students.map do |student|
       {

@@ -15,7 +15,7 @@ User.create(
   car_plate: %w[DPG4556 DZH8423 EZE4996 EPC8893].sample,
   car_color: %w[White Black Red Blue Purple].sample,
   email: 'branca@teste.com',
-  password: 123_123
+  password: '123123'
 )
 
 User.create(
