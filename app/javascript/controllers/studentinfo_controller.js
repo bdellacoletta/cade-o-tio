@@ -10,15 +10,28 @@ export default class extends Controller {
 
   revealContent(event) {
     event.preventDefault()
-    // console.log(this.contentTarget.classList.value)
+    // console.log(this.currentTarget);
+    // id
+    console.log(event.currentTarget.dataset.id);
+    // console.log(this.contentTargets);
+    this.contentTargets.forEach ((target) => {
+      if (target.dataset.id === event.currentTarget.dataset.id) {
+        if (target.classList.value == 'd-none') {
+          // console.log(target);
+          target.classList.remove("d-none");
+        } else {
+          target.classList.add("d-none")
+        }
+      }
+    })
 
-    if (this.contentTarget.classList.value == 'd-none') {
-      // console.log(event.currentTarget);
-      // console.log(this.contentTarget);
-      this.contentTarget.classList.remove("d-none");
-    } else {
-      this.contentTarget.classList.add("d-none")
-    }
+    // if (this.contentTarget.classList.value == 'd-none') {
+    //   // console.log(this.contentTarget);
+
+    //   this.contentTarget.classList.remove("d-none");
+    // } else {
+    //   this.contentTarget.classList.add("d-none")
+    // }
   }
 
   // concealContent() {
