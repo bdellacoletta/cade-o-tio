@@ -2,6 +2,7 @@
   "name": "cade-o-tio",
   "private": true,
   "dependencies": {
+    "@mapbox/mapbox-gl-directions": "^4.1.0",
     "@mapbox/mapbox-gl-geocoder": "^5.0.1",
     "@popperjs/core": "^2.11.5",
     "@rails/actioncable": "^6.0.0",
