@@ -48,6 +48,6 @@ class StudentsController < ApplicationController
   end
 
   def set_itinerary
-    @itinerary = Itinerary.find(params[:itinerary_id])
+    @itinerary = Itinerary.friendly.find(params[:itinerary_id])
   end
 end
