@@ -8,8 +8,19 @@ export default class extends Controller {
     // console.log('CONECTADO')
   }
 
-  revealContent() {
-    console.log(this.contentTarget)
-    this.contentTarget.classList.remove("d-none")
+  revealContent(event) {
+    event.preventDefault()
+    // console.log(this.contentTarget.classList.value)
+
+    if (this.contentTarget.classList.value == 'd-none') {
+      // console.log('Gotcha');
+      this.contentTarget.classList.remove("d-none");
+    } else {
+      this.contentTarget.classList.add("d-none")
+    }
   }
+
+  // concealContent() {
+  //   console.log(this.contentTarget)
+  // }
 }
