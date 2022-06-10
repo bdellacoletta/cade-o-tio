@@ -13,13 +13,14 @@
                                 autofocus: true,
                                 input_html: { autocomplete: "email" } %>
                     <%= f.input :password,
+                                label: "Senha",
                                 required: false,
                                 input_html: { autocomplete: "current-password" } %>
                     <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
                   </div>
 
                   <div class="form-actions">
-                    <%= f.button :submit, "Log in", class: "btn btn-warning" %>
+                    <%= f.button :submit, "Entrar", class: "btn btn-warning" %>
                     <%= render "devise/shared/links" %>
                   </div>
                 <% end %>
