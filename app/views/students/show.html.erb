@@ -1,13 +1,16 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-xs-12">
-      <div>
+      <div class="mt-3">
         <ul>
-          <li><%= @student.parents_name %></li>
-          <li><%= @student.parents_email %></li>
-          <li><%= @student.token %></li>
+          <li><p>Nome: <%= @student.child_name %></p></li>
+          <li><p>Endereço: <%= @student.child_address %></p></li>
+          <li><p>Responsável: <%= @student.parents_name %></p></li>
+          <li><p>Email: <%= @student.parents_email %></p></li>
         </ul>
       </div>
+      <%= link_to 'Back', :back, class: 'btn btn-primary mt-5' %>
+      <%= link_to 'Edit', '#', class: 'btn btn-warning mt-5' %>
     </div>
   </div>
 </div>

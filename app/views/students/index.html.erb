@@ -4,11 +4,11 @@
       <div id="logo-placeholder" class="mt-3 align-items-center">Logo</div>
       <h1>Crianças</h1>
       <div  class="cards-student-index"
-            data-controller='sequence'
+            data-controller='sequence studentinfo'
             data-sequence-url="/students/:id/move">
         <% @students.each do |student| %>
-          <%= link_to student_path(student), class: 'student-index-link', data: { id: student.id }  do %>
-            <div  class="card-product-student-index mt-3">
+          <%= link_to '#', class: 'student-index-link', data: { id: student.id }  do %>
+            <div class="card-product-student-index mt-3" data-action="click->studentinfo#revealContent">
               <img src="https://images.unsplash.com/photo-1629872430082-93d8912beccf">
               <div class="card-product-infos-student d-flex">
                 <div class="card-product-infos-student-index">
@@ -16,8 +16,17 @@
                   <p><%= student.child_address %></p>
                 </div>
                 <div class="card-product-infos-student-index-seq">
-                  <h2><%= student.position %></h2>
                 </div>
+              </div>
+            </div>
+            <div>
+              <div >
+                <ul class="mt-3 d-none" data-studentinfo-target="content">
+                  <li><p>Nome: <%= student.child_name %></p></li>
+                  <li><p>Endereço: <%= student.child_address %></p></li>
+                  <li><p>Responsável: <%= student.parents_name %></p></li>
+                  <li><p>Email: <%= student.parents_email %></p></li>
+                </ul>
               </div>
             </div>
           <% end %>
