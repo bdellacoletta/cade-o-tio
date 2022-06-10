@@ -13,7 +13,8 @@ export default class extends Controller {
     // console.log(this.contentTarget.classList.value)
 
     if (this.contentTarget.classList.value == 'd-none') {
-      // console.log('Gotcha');
+      // console.log(event.currentTarget);
+      // console.log(this.contentTarget);
       this.contentTarget.classList.remove("d-none");
     } else {
       this.contentTarget.classList.add("d-none")

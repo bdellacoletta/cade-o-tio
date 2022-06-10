@@ -7,17 +7,14 @@
             data-controller='sequence studentinfo'
             data-sequence-url="/students/:id/move">
         <% @students.each do |student| %>
-          <%= link_to '#',  class: 'student-index-link mb-3',
-                            data: { id: student.id },
-                            data: { action: 'click->studentinfo#revealContent' }  do %>
-            <div class="card-product-student-index mt-3">
+          <%= link_to @student_path,  class: 'student-index-link mb-3',
+                                      data: { id: student.id }  do %>
+            <div class="card-product-student-index mt-3" data-action="click->studentinfo#revealContent">
               <img src="https://images.unsplash.com/photo-1629872430082-93d8912beccf">
               <div class="card-product-infos-student d-flex">
                 <div class="card-product-infos-student-index">
                   <h2><%= student.child_name %></h2>
                   <p><%= student.child_address %></p>
-                </div>
-                <div class="card-product-infos-student-index-seq">
                 </div>
               </div>
             </div>

@@ -12,20 +12,11 @@ export default class extends Controller {
     this.sortable = Sortable.create(this.element, {
       onEnd: this.end.bind(this)
     })
-
-
-    // this.passengerTargets.forEach((passenger) => {
-    //   new Sortable(passenger, {
-    //       group: 'Sequence', // set both lists to same group
-    //       animation: 300,
-    //       onEnd: this.saveSequence
-    //   });
-    // });
   }
 
   end(event) {
     let id = event.item.dataset.id
-    console.log(event.item);
+    // console.log(event.item);
     let data = new FormData()
 
     data.append("position", event.newIndex + 1)
