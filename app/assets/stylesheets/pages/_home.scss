@@ -1,4 +1,34 @@
 // Specific CSS for your home-page
+
+#logo-placeholder {
+  height: 50px;
+  width: 50px;
+  background-color: rgb(233, 233, 21);
+  margin: 0 auto;
+}
+
+.student-index-link {
+  text-decoration: none;
+  color: black;
+}
+
+.card-product-student-index h2, .card-product-student-index .h2 {
+  font-size: 20px;
+}
+
+.card-product-student-index p {
+  font-size: 14px;
+}
+
+.card-product-infos-student-index-seq {
+  margin-right: 6px;
+}
+
+.students-info ul {
+  list-style-type: none;
+  padding: 0;
+}
+
 .intro-home {
   display: flex;
   flex-direction: column;
@@ -31,4 +61,5 @@
     width: 10rem;
     font-size: 1.2rem;
   }
+
 }

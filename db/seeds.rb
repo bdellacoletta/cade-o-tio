@@ -6,46 +6,73 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-bino = User.create!(
-  first_name: 'Bino',
-  last_name: 'da Silva',
-  home_address:"Rua Fradique Coutinho São Paulo - São Paulo, 05416, Brasil",
-  school_address: 'Rua Jericó 193, São Paulo - São Paulo, 05435, Brasil',
-  car_model: "Ducato",
-  car_plate: "EPC8893",
-  car_color: "Blue",
-  email: 'bino@teste.com',
-  password: '123123',
-  latitude_home: -23.55746480559857,
-  longitude_home: -46.69019615879404,
-  latitude_school: -23.551674517446198,
-  longitude_school: -46.68933490112346
+User.create(
+  first_name: 'Branca',
+  last_name: 'Teste',
+  home_address: 'Rua Santos',
+  school_address: 'Rua Jerico',
+  car_model: %w[Transit Master Ducato Kombi].sample,
+  car_plate: %w[DPG4556 DZH8423 EZE4996 EPC8893].sample,
+  car_color: %w[White Black Red Blue Purple].sample,
+  email: 'branca@teste.com',
+  password: '123123'
 )
-puts "user created"
 
-Itinerary.create!(
-  user_id: bino
+# User.create(
+#   first_name: 'Bruno',
+#   last_name: 'Teste',
+#   home_address: 'Rua Fernandes',
+#   school_address: 'Rua Original',
+#   car_model: %w[Transit Master Ducato Kombi].sample,
+#   car_plate: %w[DPG4556 DZH8423 EZE4996 EPC8893].sample,
+#   car_color: %w[White Black Red Blue Purple].sample,
+#   email: 'bruno@teste.com',
+#   password: '123123',
+#   latitude_home: -23.54798223528066,
+#   longitude_home: -46.562967687304244,
+#   latitude_school: -23.547021333555954,
+#   longitude_school: -46.566039087304134
+
+# )
+
+# Itinerary.create(
+#   current_sequence: 1,
+#   user_id: User.all.ids.sample
+# )
+
+Student.create(
+  child_name: 'Joãozinho',
+  child_address: 'Rua Apucarana',
+  position: 1,
+  parents_name: 'Carol',
+  parents_email: 'carol@teste.com',
+  itinerary_id: Itinerary.all.ids.sample
 )
-puts "itinerary created"
+
+# Itinerary.create(
+#   current_sequence: 2,
+#   user_id: User.all.ids.sample
+# )
+
 
 Student.create!(
   child_name: 'Narizinho',
-  child_address: 'Rua Purpurina São Paulo - São Paulo, 05435, Brasil',
+  child_address: 'Rua Mallet',
   sequence: 2,
   parents_name: 'Lucas',
   parents_email: 'lucas@teste.com',
   itinerary_id: 1,
-  latitude_child: -23.55351375011551,
-  longitude_child: -46.69098063365381
+  latitude_child: -23.545971858128446,
+  longitude_child: -46.56457330264889
 )
 
 Student.create!(
   child_name: 'Joãozinho',
-  child_address: 'Rua Fidalga São Paulo - São Paulo, 05432, Brasil',
+  child_address: 'Rua Azevedo Soares',
   sequence: 1,
-  parents_name: 'Caio',
-  parents_email: 'caio@teste.com',
+  parents_name: 'Lucas',
+  parents_email: 'lucas@teste.com',
   itinerary_id: 1,
-  latitude_child: -23.55549550948403,
-  longitude_child: -46.690309145300176
+  latitude_child: -23.550257480222697,
+  longitude_child: -46.57530211614033
 )
