@@ -54,6 +54,7 @@ Student.create(
 #   user_id: User.all.ids.sample
 # )
 
+
 Student.create!(
   child_name: 'Narizinho',
   child_address: 'Rua Mallet',

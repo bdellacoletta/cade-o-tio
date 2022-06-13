@@ -14,6 +14,7 @@ export default class extends Controller {
     })
 
 
+
     // this.passengerTargets.forEach((passenger) => {
     //   new Sortable(passenger, {
     //       group: 'Sequence', // set both lists to same group
@@ -21,6 +22,7 @@ export default class extends Controller {
     //       onEnd: this.saveSequence
     //   });
     // });
+
   }
 
   end(event) {

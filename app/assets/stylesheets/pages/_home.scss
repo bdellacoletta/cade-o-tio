@@ -22,6 +22,12 @@
 
 .card-product-infos-student-index-seq {
   margin-right: 6px;
+}
+
+.students-info ul {
+  list-style-type: none;
+  padding: 0;
+}
 
 .intro-home {
   display: flex;
@@ -55,4 +61,5 @@
     width: 10rem;
     font-size: 1.2rem;
   }
+
 }
