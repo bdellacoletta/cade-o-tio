@@ -13,14 +13,14 @@
             data-action="click->studentinfo#revealContent"
             data-id="<%= student.id %>">
 
-              <div class="card-product-infos-student d-flex flex-column align-items-center">
-                <img class="rounded-circle z-depth-2 mt-3" src="https://images.unsplash.com/photo-1629872430082-93d8912beccf">
+              <div class="card-product-infos-student d-flex p-1">
+                <img class="shadow m-1" src="https://images.unsplash.com/photo-1629872430082-93d8912beccf">
                 <div class="card-product-infos-student-index">
-                  <h2 class="text-center"><%= student.child_name %></h2>
+                  <h2><%= student.child_name %></h2>
                   <p><%= student.child_address %></p>
                 </div>
               </div>
-            <div class="mt-3 students-info static">
+            <div class="students-info static">
             </div>
               <ul class="d-none" data-studentinfo-target="content"
                                 data-id="<%= student.id %>">
@@ -28,14 +28,14 @@
                 <li><p>Endereço: <%= student.child_address %></p></li>
                 <li><p>Responsável: <%= student.parents_name %></p></li>
                 <li><p>Email: <%= student.parents_email %></p></li>
-                <li><%= link_to 'Editar', student_path(student), class: 'btn btn-warning btn-student' %></li>
+                <%= link_to 'Editar', student_path(student), class: 'btn btn-warning btn-student' %>
               </ul>
             </div>
           <% end %>
         <% end %>
       </div>
       <div class="d-flex justify-content-center">
-        <%= link_to 'Gerar itinerário', itinerary_path(@itinerary), class: 'btn btn-primary mt-5' %>
+        <%= link_to 'Gerar itinerário', itinerary_path(@itinerary), class: 'btn btn-primary my-3' %>
 
       </div>
     </div>
