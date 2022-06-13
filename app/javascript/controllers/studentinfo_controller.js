@@ -9,10 +9,10 @@ export default class extends Controller {
   }
 
   revealContent(event) {
-    event.preventDefault()
+    event.preventDefault();
     // console.log(this.currentTarget);
     // id
-    console.log(event.currentTarget.dataset.id);
+    // console.log(event.currentTarget.dataset.id);
     // console.log(this.contentTargets);
     this.contentTargets.forEach ((target) => {
       if (target.dataset.id === event.currentTarget.dataset.id) {
@@ -20,7 +20,7 @@ export default class extends Controller {
           // console.log(target);
           target.classList.remove("d-none");
         } else {
-          target.classList.add("d-none")
+          target.classList.add("d-none");
         }
       }
     })
