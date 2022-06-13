@@ -34,6 +34,7 @@ gem 'font-awesome-sass', '~> 5.6.1'
 gem 'simple_form', github: 'heartcombo/simple_form'
 gem 'devise'
 gem "geocoder"
+gem 'letter_opener', group: :development
 
 group :development, :test do
   gem 'pry-byebug'
