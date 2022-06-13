@@ -8,8 +8,8 @@
   <div class="row justify-content-center">
     <div class="col-12 col-sm-4 col-sm-offset-4">
       <div class="home-itens">
-        <%= link_to "Cadastrar criança", "#", class: "btn btn-home" %>
-        <%= link_to "Criar / Editar itinerário", "#", class: "btn btn-home" %>
+        <%= link_to "Cadastrar criança", new_itinerary_student_path(@itinerary), class: "btn btn-home" %>
+        <%= link_to "Editar itinerário", itinerary_students_path(@itinerary), class: "btn btn-home" %>
         <%= link_to "Visualizar itinerário", itinerary_path(@itinerary), class: "btn btn-home" %>
       </div>
     </div>
