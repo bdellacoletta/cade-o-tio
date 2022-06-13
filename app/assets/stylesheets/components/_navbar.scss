@@ -1,18 +1,17 @@
 .navbar-lewagon {
-  margin: 0 20px;
-  justify-content: space-between;
   background: transparent;
+  justify-content: space-around;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+
+  .me-auto .nav-item .nav-link {
+    color:#FFA500;
+    }
 }
 
 .navbar-lewagon .navbar-brand img {
   width: 120px;
   border-radius: 5px;
-}
-
-.navbar-lewagon .nav-item a {
-  color:#FFA500;
 }
