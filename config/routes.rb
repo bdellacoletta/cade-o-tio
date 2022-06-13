@@ -5,5 +5,9 @@ Rails.application.routes.draw do
   resources :itineraries, only: %i[show create update] do
     resources :students, only: %i[new create index]
   end
-  resources :students, only: %i[edit update destroy show]
+  resources :students, only: %i[edit update destroy show] do
+    member do
+      patch :move
+    end
+  end
 end

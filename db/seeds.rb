@@ -40,6 +40,15 @@ User.create(
 #   user_id: User.all.ids.sample
 # )
 
+Student.create(
+  child_name: 'Joãozinho',
+  child_address: 'Rua Apucarana',
+  position: 1,
+  parents_name: 'Carol',
+  parents_email: 'carol@teste.com',
+  itinerary_id: Itinerary.all.ids.sample
+)
+
 # Itinerary.create(
 #   current_sequence: 2,
 #   user_id: User.all.ids.sample

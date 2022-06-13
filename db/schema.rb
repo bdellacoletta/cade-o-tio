@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 2022_06_09_174631) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "child_name"
     t.string "child_address"
-    t.integer "sequence"
+    t.integer "position"
     t.string "parents_name"
     t.string "parents_email"
     t.bigint "itinerary_id", null: false
