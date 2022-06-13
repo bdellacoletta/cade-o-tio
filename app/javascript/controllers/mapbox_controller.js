@@ -6,7 +6,8 @@ export default class extends Controller {
   static values = {
     apiKey: String,
     points: Object,
-    markers: Array
+    markers: Array,
+    id: Number
   }
 
   connect() {
@@ -26,16 +27,19 @@ export default class extends Controller {
 
     this.map.on('load', () => {
       directions.setOrigin([this.pointsValue.origin.lng, this.pointsValue.origin.lat])
+
       this.pointsValue.waypoints.forEach((waypoint) => {
         directions.addWaypoint(waypoint.position,[waypoint.lng, waypoint.lat])
       })
 
       directions.setDestination([this.pointsValue.destination.lng, this.pointsValue.destination.lat])
+
       this.#addMarkersToMap();
       this.#fitMapToMarkers();
     })
 
     this.map.addControl(directions);
+    this.readCoordinates();
   }
 
   #addMarkersToMap() {
@@ -51,4 +55,16 @@ export default class extends Controller {
     this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
     this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
   }
+
+  readCoordinates() {
+    const url = `/itineraries/${this.idValue}/fetch_coordinates`
+      fetch(url)
+        .then(response => response.json())
+        .then((data) => {
+          console.log(data)
+          const marker1 = new mapboxgl.Marker()
+          .setLngLat([ data.longitude, data.latitude ])
+          .addTo(this.map)
+        })
+    }
 }

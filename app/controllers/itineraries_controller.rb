@@ -1,5 +1,6 @@
-class ItinerariesController < ApplicationController
+require 'json'
 
+class ItinerariesController < ApplicationController
   def create
     @itinerary = Itinerary.new
     @itinerary.user_id = current_user
@@ -12,14 +13,12 @@ class ItinerariesController < ApplicationController
   end
 
   def show
-
     @itinerary = Itinerary.friendly.find(params[:id])
-
     @markers = @itinerary.students.order(:position).map do |student|
       { lat: student.latitude_child, lng: student.longitude_child }
     end
 
-     @points = {
+    @points = {
       origin: {
         lat: @itinerary.user.latitude_home,
         lng: @itinerary.user.longitude_home
@@ -38,21 +37,27 @@ class ItinerariesController < ApplicationController
         lng: @itinerary.user.longitude_school
       }
     }
-    end
+  end
 
-   def update
+  def update
     @itinerary = Itinerary.find(params[:id])
     @student = Student.find(params[:id])
     @itinerary.current_sequence = @student.position
     @itinerary.user_id = current_user
     @itinerary.update
     redirect_to itinerary_path(@itinerary)
-    end
+  end
 
-    def update_coordinates
-      @itinerary = Itinerary.find(params[:id])
-      @itinerary.latitude = params[:latitude]
-      @itinerary.longitude = params[:longitude]
-      @itinerary.save!
-    end
+  def update_coordinates
+    @itinerary = Itinerary.find(params[:id])
+    @itinerary.latitude = params[:latitude]
+    @itinerary.longitude = params[:longitude]
+    @itinerary.save!
+  end
+
+  def fetch_coordinates
+    @itinerary = Itinerary.find(params[:id])
+    @coordinates = { latitude: @itinerary.latitude, longitude: @itinerary.longitude }.to_json
+    render json: @coordinates 
+  end
 end

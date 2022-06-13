@@ -9,4 +9,5 @@
   data-controller="mapbox"
   data-mapbox-points-value="<%= @points.to_json %>"
   data-mapbox-markers-value="<%= @markers.to_json %>"
-  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+  data-mapbox-id-value="<%= @itinerary.id %>"></div>
