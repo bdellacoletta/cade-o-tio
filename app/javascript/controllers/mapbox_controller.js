@@ -57,14 +57,18 @@ export default class extends Controller {
   }
 
   readCoordinates() {
+    this.interval = setInterval(this.moveCar.bind(this), 10000)
+  }
+
+  moveCar() {
     const url = `/itineraries/${this.idValue}/fetch_coordinates`
-      fetch(url)
-        .then(response => response.json())
-        .then((data) => {
-          console.log(data)
-          const marker1 = new mapboxgl.Marker()
-          .setLngLat([ data.longitude, data.latitude ])
-          .addTo(this.map)
-        })
+    fetch(url)
+    .then(response => response.json())
+    .then((data) => {
+        this.interval = setInterval(this.moveCar.bind(this), 10000)
+        const marker1 = new mapboxgl.Marker()
+        .setLngLat([ data.longitude, data.latitude ])
+        .addTo(this.map)
+      })
     }
 }

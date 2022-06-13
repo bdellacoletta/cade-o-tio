@@ -58,6 +58,6 @@ class ItinerariesController < ApplicationController
   def fetch_coordinates
     @itinerary = Itinerary.find(params[:id])
     @coordinates = { latitude: @itinerary.latitude, longitude: @itinerary.longitude }.to_json
-    render json: @coordinates 
+    render json: @coordinates
   end
 end
