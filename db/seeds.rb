@@ -40,7 +40,6 @@ User.create(
 #   user_id: User.all.ids.sample
 # )
 
-
 Student.create(
   child_name: 'Joãozinho',
   child_address: 'Rua Apucarana',
