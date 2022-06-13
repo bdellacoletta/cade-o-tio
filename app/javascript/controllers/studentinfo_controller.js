@@ -10,7 +10,7 @@ export default class extends Controller {
 
   revealContent(event) {
     event.preventDefault();
-    console.log(event.target.classList.value.includes("test"))
+    // console.log(event.target.classList.value.includes("test"))
     if (!event.target.classList.value.includes("test")) {
       this.contentTargets.forEach ((target) => {
         if (target.dataset.id === event.currentTarget.dataset.id) {
@@ -24,19 +24,18 @@ export default class extends Controller {
           }
         }
       })
+    } else {
+      this.iconTargets.forEach ((icon) => {
+        if (icon.dataset.id === event.currentTarget.dataset.id) {
+          // console.log(icon.dataset.id);
+          // console.log(event.currentTarget.dataset.id);
+          if (icon.classList.value.includes("d-none")) {
+            icon.classList.remove("d-none");
+
+          }
+        }
+      })
     }
-    // console.log(this.currentTarget);
-    // id
-    // console.log(event.currentTarget.dataset.id);
-    // console.log(this.contentTargets);
-
-    // if (this.contentTarget.classList.value == 'd-none') {
-    //   // console.log(this.contentTarget);
-
-    //   this.contentTarget.classList.remove("d-none");
-    // } else {
-    //   this.contentTarget.classList.add("d-none")
-    // }
   }
 
   // concealContent() {

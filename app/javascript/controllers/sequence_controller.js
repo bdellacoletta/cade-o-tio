@@ -15,9 +15,6 @@ export default class extends Controller {
       direction: 'vertical',
       onEnd: this.end.bind(this)
     })
-
-
-
     // this.passengerTargets.forEach((passenger) => {
     //   new Sortable(passenger, {
     //       group: 'Sequence', // set both lists to same group
@@ -25,7 +22,6 @@ export default class extends Controller {
     //       onEnd: this.saveSequence
     //   });
     // });
-
   }
 
   end(event) {

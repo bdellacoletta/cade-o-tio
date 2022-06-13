@@ -10,8 +10,5 @@ export default class extends Controller {
   displayForm() {
     // this.contentTarget.classList.add("d-none")
     this.formTarget.classList.remove("d-none")
-
   }
-
-
 }
