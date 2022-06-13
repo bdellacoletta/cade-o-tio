@@ -12,7 +12,7 @@
         <%= f.input :child_name, label: 'Nome da criança' %>
         <%= f.input :child_address, label: 'Endereço da criança', input_html: { data: { geocoder_target: "address" }, class:"d-none" },
                     wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } } %>
-        <%= f.input :sequence, label: 'Sequência' %>
+        <%= f.input :position, label: 'Sequência' %>
         <%= f.input :parents_name, label: 'Nome do(a) responsável' %>
         <%= f.input :parents_email, label: 'E-mail do(a) responsável' %>
         <%= f.button :submit, value: 'Enviar', class: 'submit-button' %>

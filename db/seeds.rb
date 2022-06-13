@@ -58,7 +58,7 @@ Student.create(
 Student.create!(
   child_name: 'Narizinho',
   child_address: 'Rua Mallet',
-  sequence: 2,
+  position: 2,
   parents_name: 'Lucas',
   parents_email: 'lucas@teste.com',
   itinerary_id: 1,
@@ -69,7 +69,7 @@ Student.create!(
 Student.create!(
   child_name: 'Joãozinho',
   child_address: 'Rua Azevedo Soares',
-  sequence: 1,
+  position: 1,
   parents_name: 'Lucas',
   parents_email: 'lucas@teste.com',
   itinerary_id: 1,

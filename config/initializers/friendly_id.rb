@@ -18,7 +18,7 @@ FriendlyId.defaults do |config|
 
   config.reserved_words = %w(new edit index session login logout users admin
     stylesheets assets javascripts images)
-    
+
   # This adds an option to treat reserved words as conflicts rather than exceptions.
   # When there is no good candidate, a UUID will be appended, matching the existing
   # conflict behavior.
@@ -67,10 +67,10 @@ FriendlyId.defaults do |config|
   # separator. If you're upgrading from FriendlyId 4, you may wish to replace this
   # with two dashes.
   #
-  # config.sequence_separator = '-'
+  # config.position_separator = '-'
   #
   # Note that you must use the :slugged addon **prior** to the line which
-  # configures the sequence separator, or else FriendlyId will raise an undefined
+  # configures the position separator, or else FriendlyId will raise an undefined
   # method error.
   #
   #  ## Tips and Tricks
