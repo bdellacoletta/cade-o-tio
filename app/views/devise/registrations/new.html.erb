@@ -30,7 +30,7 @@
                         label: "Senha",
                         placeholder:"Digite sua senha",
                         required: true,
-                        hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                        hint: ("mínimo de #{@minimum_password_length} caracteres" if @minimum_password_length),
                         input_html: { autocomplete: "new-password" } %>
 
             <%= f.input :password_confirmation,
@@ -39,46 +39,37 @@
                         required: true,
                         input_html: { autocomplete: "new-password" } %>
 
-            <%= f.input :home_address,
-                    label:"Ponto de partida",
-                    required: true,
-                    autofocus: true,
-                    placeholder: "Digite o endereço inicial do seu itinerário",
-                    input_html: { autocomplete: "first name" }%>
+            <%= f.input :home_address, label:"Ponto de partida", input_html: { data: { geocoder_target: "address" }, class: "d-none" },
+              wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } } %>
 
-              <%= f.input :school_address,
-                    label:"Ponto final",
-                    required: true,
-                    autofocus: true,
-                    placeholder: "Digite o ponto final do seu itinerário",
-                    input_html: { autocomplete: "last name" }%>
+            <%= f.input :school_address, label:"Ponto final", input_html: { data: { geocoder_target: "address" }, class: "d-none" },
+              wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } } %>
 
-                     <%= f.input :car_model,
-                    label:"Modelo do carro",
-                    required: true,
-                    autofocus: true,
-                    placeholder: "Ducato teto alto",
-                    input_html: { autocomplete: "last name" }%>
+                  <%= f.input :car_model,
+                  label:"Modelo do carro",
+                  required: true,
+                  autofocus: true,
+                  placeholder: "Ducato teto alto",
+                  input_html: { autocomplete: "modelo do carro" }%>
 
-                     <%= f.input :car_plate,
-                    label:"Placa do carro",
-                    required: true,
-                    autofocus: true,
-                    placeholder: "AAA-1234 ou AAA-1B34",
-                    input_html: { autocomplete: "last name" }%>
+                    <%= f.input :car_plate,
+                  label:"Placa do carro",
+                  required: true,
+                  autofocus: true,
+                  placeholder: "AAA1234 ou AAA1B34",
+                  input_html: { autocomplete: "placa do carro" }%>
 
-                    <%= f.input :car_color,
-                    label: "Cor do carro",
-                    required: true,
-                    autofocus: true,
-                    placeholder: "branca",
-                    input_html: { autocomplete: "last name" }%>
+                  <%= f.input :car_color,
+                  label: "Cor do carro",
+                  required: true,
+                  autofocus: true,
+                  placeholder: "branca",
+                  input_html: { autocomplete: "cor do carro" }%>
 
-                         <div class="row text-center">
+              <div class="row text-center">
               <%= f.submit 'Sign up', class: "btn btn-warning btn-lg" %>
               <%= render "devise/shared/links" %>
+              </div>
     <%end%>
-
-    </div>
   </div>
 </div>
