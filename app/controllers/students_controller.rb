@@ -1,9 +1,9 @@
 class StudentsController < ApplicationController
-  before_action :set_student, only: %i[edit show update destroy]
+  before_action :set_student, only: %i[edit show update destroy move]
   before_action :set_itinerary, only: %i[index create new destroy]
 
   def index
-    @students = Student.where(itinerary: @itinerary)
+    @students = Student.where(itinerary: @itinerary).order(:position)
   end
 
   def show
@@ -37,10 +37,15 @@ class StudentsController < ApplicationController
     redirect_to itinerary_students_path(@student.itinerary_id)
   end
 
+  def move
+    @student.insert_at(params[:position].to_i)
+    head :ok
+  end
+
   private
 
   def student_params
-    params.require(:student).permit(:child_name, :child_address, :sequence, :parents_name, :parents_email)
+    params.require(:student).permit(:child_name, :child_address, :position, :parents_name, :parents_email)
   end
 
   def set_student
