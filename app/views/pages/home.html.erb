@@ -1,6 +1,5 @@
 <div class="intro-home">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/2048px-Google_%22G%22_Logo.svg.png" alt="Logo"
-  class="logo-home">
+  <%= image_tag "cade_o_tio_circulo_preto.png",  class: "logo-home" %>
   <h1 class="title-home">Cadê o tio?</h1>
 </div>
 
@@ -8,11 +7,10 @@
   <div class="row justify-content-center">
     <div class="col-12 col-sm-4 col-sm-offset-4">
       <div class="home-itens">
-        <%= link_to "Cadastrar criança", "#", class: "btn btn-home" %>
-        <%= link_to "Criar / Editar itinerário", "#", class: "btn btn-home" %>
-        <%= link_to "Visualizar itinerário", "#", class: "btn btn-home" %>
+        <%= link_to "Cadastrar criança", new_itinerary_student_path(@itinerary), class: "btn btn-home" %>
+        <%= link_to "Editar itinerário", itinerary_students_path(@itinerary), class: "btn btn-home" %>
+        <%= link_to "Visualizar itinerário", itinerary_path(@itinerary), class: "btn btn-home" %>
       </div>
     </div>
   </div>
 </div>
-
