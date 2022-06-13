@@ -9,7 +9,7 @@
         <% @students.each do |student| %>
           <%= link_to @student_path,  class: 'student-index-link mb-3',
                                       data: { id: student.id }  do %>
-            <div class="card-product-student-index mt-3"
+            <div class="card-product-student-index mb-3"
             data-action="click->studentinfo#revealContent"
             data-id="<%= student.id %>">
 
