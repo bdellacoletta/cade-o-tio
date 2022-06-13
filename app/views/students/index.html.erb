@@ -13,7 +13,7 @@
             data-action="click->studentinfo#revealContent"
             data-id="<%= student.id %>">
 
-              <div class="card-product-infos-student d-flex p-1">
+              <div class="card-product-infos-student d-flex">
                 <img class="shadow m-1" src="https://images.unsplash.com/photo-1629872430082-93d8912beccf">
                 <div class="card-product-infos-student-index">
                   <h2><%= student.child_name %></h2>
@@ -21,7 +21,7 @@
                 </div>
               </div>
               <div class="students-info static">
-                <ul class="d-none" data-studentinfo-target="content"
+                <ul class="d-none mt-1" data-studentinfo-target="content"
                                   data-id="<%= student.id %>">
                   <li><p>Nome: <%= student.child_name %></p></li>
                   <li><p>Endereço: <%= student.child_address %></p></li>
