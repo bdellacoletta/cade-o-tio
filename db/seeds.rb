@@ -40,18 +40,39 @@ User.create(
 #   user_id: User.all.ids.sample
 # )
 
+Student.create(
+  child_name: 'Joãozinho',
+  child_address: 'Rua Apucarana',
+  position: 1,
+  parents_name: 'Carol',
+  parents_email: 'carol@teste.com',
+  itinerary_id: Itinerary.all.ids.sample
+)
+
 # Itinerary.create(
 #   current_sequence: 2,
 #   user_id: User.all.ids.sample
 # )
 
+
 Student.create!(
   child_name: 'Narizinho',
-  child_address: 'Rua Azevedo',
-  sequence: 2,
+  child_address: 'Rua Mallet',
+  position: 2,
   parents_name: 'Lucas',
   parents_email: 'lucas@teste.com',
-  itinerary_id: Itinerary.all.ids.sample,
-  latitude_child: -23.545423237414877,
-  longitude_child: -46.566315589157234
+  itinerary_id: 1,
+  latitude_child: -23.545971858128446,
+  longitude_child: -46.56457330264889
+)
+
+Student.create!(
+  child_name: 'Joãozinho',
+  child_address: 'Rua Azevedo Soares',
+  position: 1,
+  parents_name: 'Lucas',
+  parents_email: 'lucas@teste.com',
+  itinerary_id: 1,
+  latitude_child: -23.550257480222697,
+  longitude_child: -46.57530211614033
 )
