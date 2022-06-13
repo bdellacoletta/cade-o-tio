@@ -40,7 +40,6 @@ class ItinerariesController < ApplicationController
     }
     end
 
-
    def update
     @itinerary = Itinerary.find(params[:id])
     @student = Student.find(params[:id])
@@ -50,4 +49,10 @@ class ItinerariesController < ApplicationController
     redirect_to itinerary_path(@itinerary)
     end
 
+    def update_coordinates
+      @itinerary = Itinerary.find(params[:id])
+      @itinerary.latitude = params[:latitude]
+      @itinerary.longitude = params[:longitude]
+      @itinerary.save!
+    end
 end
