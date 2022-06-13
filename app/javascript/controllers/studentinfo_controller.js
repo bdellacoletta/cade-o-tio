@@ -16,7 +16,7 @@ export default class extends Controller {
     // console.log(this.contentTargets);
     this.contentTargets.forEach ((target) => {
       if (target.dataset.id === event.currentTarget.dataset.id) {
-        if (target.classList.value == 'd-none') {
+        if (target.classList.value.includes("d-none")) {
           // console.log(target);
           target.classList.remove("d-none");
         } else {
