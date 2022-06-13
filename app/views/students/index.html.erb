@@ -19,7 +19,6 @@
                   <h2><%= student.child_name %></h2>
                   <p><%= student.child_address %></p>
                 </div>
-
               </div>
             </div>
           <% end %>
@@ -30,6 +29,7 @@
               <li><p>Endereço: <%= student.child_address %></p></li>
               <li><p>Responsável: <%= student.parents_name %></p></li>
               <li><p>Email: <%= student.parents_email %></p></li>
+              <li><%= link_to 'Editar', student_path(student), class: 'btn btn-warning btn-student' %></li>
             </ul>
           </div>
         <% end %>

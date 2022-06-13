@@ -11,6 +11,8 @@ export default class extends Controller {
   connect() {
     this.sortable = Sortable.create(this.element, {
       filter: '.static',
+      animation: 300,
+      direction: 'vertical',
       onEnd: this.end.bind(this)
     })
 
