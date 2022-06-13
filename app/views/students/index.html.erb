@@ -20,7 +20,7 @@
                   <p><%= student.child_address %></p>
                 </div>
               </div>
-              <div class="students-info static">
+              <div class="students-info" data-controller="edit-student">
                 <ul class="d-none mt-1" data-studentinfo-target="content"
                                   data-id="<%= student.id %>">
                   <li><p>Nome: <%= student.child_name %></p></li>
@@ -28,11 +28,14 @@
                   <li><p>Responsável: <%= student.parents_name %></p></li>
                   <li><p>Email: <%= student.parents_email %></p></li>
                   <li><%= link_to student_path(student), class: 'btn-student-edit' do %>
-                    <i class="far fa-edit"></i>
+                    <i class="far fa-edit" data-action="click->edit-movie#displayForm"></i>
                   <% end %>
                   </li>
                 </ul>
               </div>
+              <%= simple_form_for student, html: { class: "d-none", data: { edit_student_target: "form" } } do |f| %>
+                 <%= f.input :child_name %>
+              <% end %>
             </div>
           <% end %>
         <% end %>

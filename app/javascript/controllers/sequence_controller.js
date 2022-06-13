@@ -30,8 +30,8 @@ export default class extends Controller {
 
   end(event) {
     let id = event.item.dataset.id
-    console.log(event.item);
-    console.log(event.currentTarget);
+    // console.log(event.item);
+    // console.log(event.currentTarget);
     let data = new FormData()
 
     data.append("position", event.newIndex + 1)
