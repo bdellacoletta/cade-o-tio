@@ -15,7 +15,7 @@ class ItinerariesController < ApplicationController
 
     @itinerary = Itinerary.friendly.find(params[:id])
 
-    @markers = @itinerary.students.order(:sequence).map do |student|
+    @markers = @itinerary.students.order(:position).map do |student|
       { lat: student.latitude_child, lng: student.longitude_child }
     end
 
@@ -25,9 +25,9 @@ class ItinerariesController < ApplicationController
         lng: @itinerary.user.longitude_home
       },
 
-      waypoints: @itinerary.students.order(:sequence).map do |student|
+      waypoints: @itinerary.students.order(:position).map do |student|
         {
-          sequence: student.sequence,
+          position: student.position,
           lat: student.latitude_child,
           lng: student.longitude_child
         }
@@ -39,12 +39,12 @@ class ItinerariesController < ApplicationController
       }
     }
     end
- 
-  
+
+
    def update
     @itinerary = Itinerary.find(params[:id])
     @student = Student.find(params[:id])
-    @itinerary.current_sequence = @student.sequence
+    @itinerary.current_sequence = @student.position
     @itinerary.user_id = current_user
     @itinerary.update
     redirect_to itinerary_path(@itinerary)

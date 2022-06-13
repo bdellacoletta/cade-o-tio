@@ -27,7 +27,7 @@ export default class extends Controller {
     this.map.on('load', () => {
       directions.setOrigin([this.pointsValue.origin.lng, this.pointsValue.origin.lat])
       this.pointsValue.waypoints.forEach((waypoint) => {
-        directions.addWaypoint(waypoint.sequence,[waypoint.lng, waypoint.lat])
+        directions.addWaypoint(waypoint.position,[waypoint.lng, waypoint.lat])
       })
 
       directions.setDestination([this.pointsValue.destination.lng, this.pointsValue.destination.lat])
