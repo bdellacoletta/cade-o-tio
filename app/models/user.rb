@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  has_many :itineraries
+  has_one :itinerary
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
@@ -12,4 +12,13 @@ class User < ApplicationRecord
   geocoded_by :school_address, :latitude  => :latitude_school, :longitude => :longitude_school
   after_validation :geocode, if: :will_save_change_to_home_address?
   after_validation :geocode, if: :will_save_change_to_school_address?
+
+  after_create :create_itinerary
+
+  private
+
+  def create_itinerary
+    Itinerary.create(user: self)
+  end
+
 end
