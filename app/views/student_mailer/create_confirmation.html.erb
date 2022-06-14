@@ -1,5 +1,14 @@
-<h1>Seja Bem Vindo ao app cadê o tio?</h1>
 
-<p>Hi <%= @student.parents_name %>,</p>
+<style>
+h1{
+  color: orange;
+  text-align: center;
+}
+</style>
 
-<%= link_to "Clique no link para vizualizar o mapa", root_url %>
+
+<h1><b>Cadê o tio?</b></h1>
+
+<p>Olá<b><%= @student.parents_name %></b>, você acaba de receber acesso para acompanhar o trajeto do seu filho(a) <b><%= @student.child_name %></b>.</p>
+
+<%= link_to "Clique aqui,", root_url %> para vizualizar.
