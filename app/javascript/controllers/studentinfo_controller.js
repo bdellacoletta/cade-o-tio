@@ -24,7 +24,11 @@ export default class extends Controller {
             })
           } else {
             target.classList.add("d-none");
-            this.iconTarget.classList.add("d-none");
+            this.iconTargets.forEach((icon) => {
+              if (icon.dataset.id === event.currentTarget.dataset.id){
+                icon.classList.add("d-none");
+              }
+            })
           }
         }
       })
