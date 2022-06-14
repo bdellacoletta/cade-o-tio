@@ -35,7 +35,7 @@
           </div>
           <div>
             <%= link_to edit_student_path(student), class: 'btn-student-edit d-none test', data: { studentinfo_target: "icon", id: student.id } do %>
-              <p class="btn btn-outline-secondary w-100" data-action="click->edit-student#displayForm">
+              <p class="btn btn-edit-student  w-100" data-action="click->edit-student#displayForm">
                 Edit
               </p>
             <% end %>
