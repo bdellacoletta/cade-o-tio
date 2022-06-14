@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(version: 2022_06_13_163336) do
     t.integer "current_sequence"
     t.bigint "user_id"
     t.string "slug"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["slug"], name: "index_itineraries_on_slug", unique: true
     t.index ["user_id"], name: "index_itineraries_on_user_id"
   end

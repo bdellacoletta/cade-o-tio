@@ -2,7 +2,6 @@ class ItinerariesController < ApplicationController
   skip_before_action :authenticate_user!, only: :show
 
   def show
-
     @itinerary = Itinerary.friendly.find(params[:id])
     redirect_to root_path unless params[:id] == @itinerary.slug
 
@@ -10,7 +9,7 @@ class ItinerariesController < ApplicationController
       { lat: student.latitude_child, lng: student.longitude_child }
     end
 
-     @points = {
+    @points = {
       origin: {
         lat: @itinerary.user.latitude_home,
         lng: @itinerary.user.longitude_home
@@ -29,8 +28,7 @@ class ItinerariesController < ApplicationController
         lng: @itinerary.user.longitude_school
       }
     }
-    end
-
+  end
 
   def update
     @itinerary = Itinerary.find(params[:id])
@@ -40,4 +38,16 @@ class ItinerariesController < ApplicationController
     redirect_to itinerary_path(@itinerary)
   end
 
+  def update_coordinates
+    @itinerary = Itinerary.find(params[:id])
+    @itinerary.latitude = params[:latitude]
+    @itinerary.longitude = params[:longitude]
+    @itinerary.save!
+  end
+
+  def fetch_coordinates
+    @itinerary = Itinerary.find(params[:id])
+    @coordinates = { latitude: @itinerary.latitude, longitude: @itinerary.longitude }.to_json
+    render json: @coordinates
+  end
 end

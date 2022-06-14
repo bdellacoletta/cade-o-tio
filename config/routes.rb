@@ -10,4 +10,6 @@ Rails.application.routes.draw do
       patch :move
     end
   end
+  patch 'itineraries/:id/update_coordinates', to: 'itineraries#update_coordinates'
+  get 'itineraries/:id/fetch_coordinates', to: 'itineraries#fetch_coordinates'
 end
