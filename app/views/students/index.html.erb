@@ -16,7 +16,7 @@
                 data-action="click->studentinfo#revealContent"
                 data-id="<%= student.id %>">
                   <div class="card-product-infos-student d-flex">
-                    <img class="shadow m-1" src="https://images.unsplash.com/photo-1629872430082-93d8912beccf">
+                    <%= image_tag "icon-student.svg" %>
                     <div class="card-product-infos-student-index">
                       <h2><%= student.child_name %></h2>
                       <p><%= student.child_address %></p>
@@ -25,10 +25,14 @@
                   <div class="students-info">
                     <ul class="d-none mt-1" data-studentinfo-target="content"
                                       data-id="<%= student.id %>">
-                      <li><p>Nome: <%= student.child_name %></p></li>
-                      <li><p>Endereço: <%= student.child_address %></p></li>
-                      <li><p>Responsável: <%= student.parents_name %></p></li>
-                      <li><p>Email: <%= student.parents_email %></p></li>
+                      <hr>
+                      <li><p><i class="fas fa-child"></i> Nome: <%= student.child_name %></p></li>
+                      <hr>
+                      <li><p><i class="fas fa-map-marker-alt"></i> Endereço: <%= student.child_address %></p></li>
+                      <hr>
+                      <li><p><i class="fas fa-user"></i> Responsável: <%= student.parents_name %></p></li>
+                      <hr>
+                      <li><p><i class="fas fa-paper-plane"></i> Email: <%= student.parents_email %></p></li>
                     </ul>
                   </div>
                 </div>
@@ -45,7 +49,7 @@
         <% end %>
       </div>
       <div class="d-flex justify-content-center">
-        <%= link_to 'Gerar itinerário', itinerary_path(@itinerary), class: 'btn btn-primary my-3' %>
+        <%= link_to 'Gerar itinerário', itinerary_path(@itinerary), class: 'btn-generate-iti my-3' %>
       </div>
     </div>
   </div>
