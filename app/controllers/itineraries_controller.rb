@@ -1,19 +1,10 @@
-require 'json'
-
 class ItinerariesController < ApplicationController
-  def create
-    @itinerary = Itinerary.new
-    @itinerary.user_id = current_user
-    @itinerary.current_sequence = current_user.home_address
-    if @itinerary.save
-      redirect_to itinerary_path(@itinerary)
-    else
-      redirect_to root_path
-    end
-  end
+  skip_before_action :authenticate_user!, only: :show
 
   def show
     @itinerary = Itinerary.friendly.find(params[:id])
+    redirect_to root_path unless params[:id] == @itinerary.slug
+
     @markers = @itinerary.students.order(:position).map do |student|
       { lat: student.latitude_child, lng: student.longitude_child }
     end
@@ -43,7 +34,6 @@ class ItinerariesController < ApplicationController
     @itinerary = Itinerary.find(params[:id])
     @student = Student.find(params[:id])
     @itinerary.current_sequence = @student.position
-    @itinerary.user_id = current_user
     @itinerary.update
     redirect_to itinerary_path(@itinerary)
   end

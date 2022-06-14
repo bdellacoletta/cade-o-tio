@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_13_142548) do
+ActiveRecord::Schema.define(version: 2022_06_13_163336) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,7 +47,6 @@ ActiveRecord::Schema.define(version: 2022_06_13_142548) do
     t.string "parents_name"
     t.string "parents_email"
     t.bigint "itinerary_id", null: false
-    t.string "token"
     t.float "latitude_child"
     t.float "longitude_child"
     t.index ["itinerary_id"], name: "index_students_on_itinerary_id"
