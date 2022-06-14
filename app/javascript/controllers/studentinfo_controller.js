@@ -24,17 +24,6 @@ export default class extends Controller {
           }
         }
       })
-    } else {
-      this.iconTargets.forEach ((icon) => {
-        if (icon.dataset.id === event.currentTarget.dataset.id) {
-          // console.log(icon.dataset.id);
-          // console.log(event.currentTarget.dataset.id);
-          if (icon.classList.value.includes("d-none")) {
-            icon.classList.remove("d-none");
-
-          }
-        }
-      })
     }
   }
 
