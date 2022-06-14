@@ -82,7 +82,6 @@ export default class extends Controller {
     .then((data) => {
         if(this.driverMarker){
           this.driverMarker.remove()
-          console.log('Marker removido')
         }
         const customMarker = document.createElement("div")
         customMarker.className = "marker"
