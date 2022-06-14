@@ -12,10 +12,13 @@ p{
 
 <h1><b>Cadê o tio?</b></h1>
 
-<p>Olá<b> <%= @student.parents_name %></b>, você acaba de receber acesso para acompanhar o trajeto do seu filho(a) <b><%= @student.child_name %></b>.</p>
+<p>Olá<b> <%= @student.parents_name.upcase %></b>, 👩‍👧 você acaba de receber acesso para acompanhar o trajeto do seu filho(a)  <b><%= @student.child_name.upcase %></b> 👧 👦 no aplicativo cadê o tio?.</p>
+<p>Clique no link abaixo para poder acompanhar o trajeto da van 🚌 escolar.</p>
 
-<p>Endereço da sua residência: <%= @student.child_address %></p>
-<p>Endereço da escola: <%= @student.child_address  %></p>
+<p>Este é o token gerado: <%= @student.token  %></p>
 
 
-<p><%= link_to "Clique aqui,", root_url %> para vizualizar.</p>
+<p><b><%= link_to "Clique aqui,", root_url %></b> para vizualizar.</p>
+
+<p>Atenciosamente 🧡🧡🧡🧡</p>
+s
