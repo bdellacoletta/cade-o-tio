@@ -15,7 +15,7 @@ p{
 <p>Olá<b> <%= @student.parents_name.upcase %></b>, 👩‍👧 você acaba de receber acesso para acompanhar o trajeto do seu filho(a)  <b><%= @student.child_name.upcase %></b> 👧 👦 no aplicativo cadê o tio?.</p>
 <p>Clique no link abaixo para poder acompanhar o trajeto da van 🚌 escolar.</p>
 
-<p>Este é o token gerado: <%= @student.token  %></p>
+<p>Este é o token gerado: <%= @student.itinerary.slug  %></p>
 
 
 <p><b><%= link_to "Clique aqui,", root_url %></b> para vizualizar.</p>
