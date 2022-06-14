@@ -17,7 +17,11 @@ export default class extends Controller {
           if (target.classList.value.includes("d-none")) {
             // console.log(target);
             target.classList.remove("d-none");
-            this.iconTarget.classList.remove("d-none");
+            this.iconTargets.forEach((icon) => {
+              if(icon.dataset.id === target.dataset.id){
+                this.iconTarget.classList.remove("d-none");
+              }
+            })
           } else {
             target.classList.add("d-none");
             this.iconTarget.classList.add("d-none");
