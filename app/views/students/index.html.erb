@@ -1,8 +1,8 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-xs-12">
-      <div id="title-students">
-        <h1 class="text-center my-5">Crianças</h1>
+      <div>
+        <h1 id="title-students" class="text-center my-5">Crianças</h1>
       </div>
       <div  class="cards-student-index"
             data-controller='sequence studentinfo edit-student'
@@ -40,9 +40,11 @@
               <% end %>
             </div>
             <div>
-              <%= link_to edit_student_path(student), class: 'btn-student-edit d-none test', data: { studentinfo_target: "icon", id: student.id } do %>
+              <%= link_to edit_student_path(student), class: 'btn-student-edit d-none test',
+                                                      data: { studentinfo_target: "icon",
+                                                      id: student.id } do %>
                 <p class="btn btn-edit-student  w-100" data-action="click->edit-student#displayForm">
-                  Edit
+                  Edite
                 </p>
               <% end %>
             </div>
