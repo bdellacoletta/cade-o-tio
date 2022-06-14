@@ -17,11 +17,11 @@ class StudentsController < ApplicationController
   def create
     @student = Student.new(student_params)
     @student.itinerary = @itinerary
+
     if @student.save
-      mail = UserMailer.with(student: @student).create_confirmation
-      mail.delivery.now
+      mail = StudentMailer.with(student: @student).create_confirmation
+      mail.deliver_now
       redirect_to student_path(@student)
-      redirect_to @student
     else
       render :new
     end

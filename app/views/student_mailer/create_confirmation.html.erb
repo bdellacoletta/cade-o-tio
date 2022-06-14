@@ -1,7 +1,10 @@
 
 <style>
 h1{
-  color: orange;
+  color: rgb(254,124,1);
+  text-align: center;
+}
+p{
   text-align: center;
 }
 </style>
@@ -9,6 +12,10 @@ h1{
 
 <h1><b>Cadê o tio?</b></h1>
 
-<p>Olá<b><%= @student.parents_name %></b>, você acaba de receber acesso para acompanhar o trajeto do seu filho(a) <b><%= @student.child_name %></b>.</p>
+<p>Olá<b> <%= @student.parents_name %></b>, você acaba de receber acesso para acompanhar o trajeto do seu filho(a) <b><%= @student.child_name %></b>.</p>
 
-<%= link_to "Clique aqui,", root_url %> para vizualizar.
+<p>Endereço da sua residência: <%= @student.child_address %></p>
+<p>Endereço da escola: <%= @student.child_address  %></p>
+
+
+<p><%= link_to "Clique aqui,", root_url %> para vizualizar.</p>
