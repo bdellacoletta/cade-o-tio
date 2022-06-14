@@ -3,6 +3,6 @@ class StudentMailer < ApplicationMailer
     @student = params[:student]
 
     mail(to: @student.parents_email,
-         subject: "Olá #{@student.parents_name} seu acesso foi criado!")
+         subject: "app cadê o tio? 🚌")
   end
 end
