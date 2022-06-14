@@ -28,13 +28,14 @@
                   <li><p>Responsável: <%= student.parents_name %></p></li>
                   <li><p>Email: <%= student.parents_email %></p></li>
 
-                  <%= link_to student_path(student), class: 'btn-student-edit d-none test', data: { studentinfo_target: "icon", id: student.id } do %>
+                  <%= link_to edit_student_path(student), class: 'btn-student-edit d-none test', data: { studentinfo_target: "icon", id: student.id } do %>
                     <i class="far fa-edit test" data-action="click->edit-student#displayForm"></i>
                   <% end %>
                 </ul>
                 <%= simple_form_for student, html: { class: "d-none", data: { edit_student_target: "form" } } do |f| %>
                   <%= f.input :child_name %>
                 <% end %>
+                
 
               </div>
             </div>
