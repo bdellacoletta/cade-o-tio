@@ -7,6 +7,7 @@
             data-controller='sequence studentinfo edit-student'
             data-sequence-url="/students/:id/move">
         <% @students.each do |student| %>
+
           <%= link_to @student_path,  class: 'student-index-link mb-3',
                                       data: { id: student.id }  do %>
             <div class="card-product-student-index mb-3"
@@ -27,13 +28,14 @@
                   <li><p>Endereço: <%= student.child_address %></p></li>
                   <li><p>Responsável: <%= student.parents_name %></p></li>
                   <li><p>Email: <%= student.parents_email %></p></li>
-
                 </ul>
-                  <%= link_to edit_student_path(student), target: "_blank", class: 'btn-student-edit d-none test', data: { studentinfo_target: "icon", id: student.id } do %>
-                    <i class="far fa-edit test" data-action="click->edit-student#displayForm"></i>
-                  <% end %>
               </div>
-            </div>
+          <% end %>
+          </div>
+          <%= link_to edit_student_path(student), target: "_blank", class: 'btn-student-edit d-none test', data: { studentinfo_target: "icon", id: student.id } do %>
+            <p class="btn btn-outline-secondary w-100" data-action="click->edit-student#displayForm">
+              Edit
+            </p>
           <% end %>
         <% end %>
       </div>

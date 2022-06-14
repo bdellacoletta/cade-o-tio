@@ -4,11 +4,16 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 10px;
+  position: relative;
   // display: flex;
   // align-items: center;
   // display: flex;
   // flex-direction: column;
 }
+
+// .students-info {
+//   position: relative;
+// }
 
 .card-product-student-index img {
   height: 100px;
@@ -53,4 +58,8 @@ a.student-index-link:visited {
 .btn-student-edit {
   color: black;
   font-size: 28px;
+  // position: absolute;
+  top: 176px;
+  right: 49px;
+  z-index: 1000;
 }
