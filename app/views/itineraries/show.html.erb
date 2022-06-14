@@ -1,7 +1,13 @@
 <h1>Itinerário</h1>
 
+<div data-controller="trip" data-trip-id-value="<%= @itinerary.id %>">
+  <button data-action="click->trip#start">Iniciar viagem</button>
+  <button data-action="click->trip#stop">Terminar viagem</button>
+</div>
+
 <div style="width: 100%; height: 600px;"
   data-controller="mapbox"
   data-mapbox-points-value="<%= @points.to_json %>"
   data-mapbox-markers-value="<%= @markers.to_json %>"
-  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+  data-mapbox-id-value="<%= @itinerary.id %>"></div>

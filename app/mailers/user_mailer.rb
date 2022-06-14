@@ -1,3 +1,0 @@
-class UserMailer < ApplicationMailer
-
-end
