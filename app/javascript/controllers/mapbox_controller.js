@@ -57,6 +57,21 @@ export default class extends Controller {
   }
 
   readCoordinates() {
+    const url = `/itineraries/${this.idValue}/fetch_coordinates`
+    fetch(url)
+    .then(response => response.json())
+    .then((data) => {
+      const customMarker = document.createElement("div")
+      customMarker.className = "marker"
+      customMarker.style.backgroundImage = `url('https://cdn-icons-png.flaticon.com/512/575/575684.png')`
+      customMarker.style.backgroundSize = "contain"
+      customMarker.style.width = "40px"
+      customMarker.style.height = "40px"
+
+        this.driverMarker = new mapboxgl.Marker(customMarker)
+        .setLngLat([ data.longitude, data.latitude ])
+        .addTo(this.map)
+      })
     this.interval = setInterval(this.moveCar.bind(this), 10000)
   }
 
@@ -65,8 +80,18 @@ export default class extends Controller {
     fetch(url)
     .then(response => response.json())
     .then((data) => {
-        this.interval = setInterval(this.moveCar.bind(this), 10000)
-        const marker1 = new mapboxgl.Marker()
+        if(this.driverMarker){
+          this.driverMarker.remove()
+          console.log('Marker removido')
+        }
+        const customMarker = document.createElement("div")
+        customMarker.className = "marker"
+        customMarker.style.backgroundImage = `url('https://cdn-icons-png.flaticon.com/512/575/575684.png')`
+        customMarker.style.backgroundSize = "contain"
+        customMarker.style.width = "40px"
+        customMarker.style.height = "40px"
+
+        this.driverMarker = new mapboxgl.Marker(customMarker)
         .setLngLat([ data.longitude, data.latitude ])
         .addTo(this.map)
       })
