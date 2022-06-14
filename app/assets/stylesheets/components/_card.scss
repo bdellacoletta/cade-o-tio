@@ -32,6 +32,7 @@
   font-size: 12px;
   line-height: 1.4;
   opacity: .7;
+  margin: 0;
   // margin-bottom: 0;
   // margin-top: 8px;
   // margin: 8px auto 0 auto;
@@ -43,7 +44,10 @@
   max-height: 110px;
 }
 .card-product-student-index .card-product-infos-student-index {
-  padding: 16px;
+  padding: 10px 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 a.student-index-link:visited {
