@@ -5,7 +5,9 @@
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+      <span>
+        <%= image_tag "onibus_avatarpng.png", class: "avatar" %>
+      </span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -15,15 +17,16 @@
             <%= link_to "Olá, #{current_user.first_name}!", "#", class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+            <%= link_to "Cadastrar criança", new_itinerary_student_path(@itinerary), class: "nav-link" %>
           </li>
-          <li class="nav-item dropdown">
-            <%= image_tag "onibus_avatarpng.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-            </div>
+          <li class="nav-item">
+            <%= link_to "Editar itinerário", itinerary_students_path(@itinerary), class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Visualizar itinerário", itinerary_path(@itinerary), class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
           </li>
         <% else %>
           <li class="nav-item">
