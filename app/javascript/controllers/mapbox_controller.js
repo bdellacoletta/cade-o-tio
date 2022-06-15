@@ -20,9 +20,13 @@ export default class extends Controller {
 
     const directions = new MapboxDirections({
       accessToken: this.apiKeyValue,
+      interactive: false,
       unit: 'metric',
       profile: 'mapbox/driving',
-      controls: {instructions: false}
+      controls: {
+        inputs: false,
+        instructions: false
+      }
     });
 
     this.map.on('load', () => {
@@ -39,7 +43,6 @@ export default class extends Controller {
     })
 
     this.map.addControl(directions, 'top-left');
-    // document.querySelector("mapboxgl-control-container").style.display = "none";
     this.readCoordinates();
   }
 

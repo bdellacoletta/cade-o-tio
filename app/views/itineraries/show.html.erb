@@ -6,5 +6,5 @@
   data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
   data-mapbox-id-value="<%= @itinerary.id %>"
   data-trip-id-value="<%= @itinerary.id %>">
-  <button data-action="click->trip#demo" class="demo__button d-flex align-items-center justify-content-center"><i class="fas fa-location-arrow" style="color: #000; margin-right: .9rem; font-size: 1.5rem"></i>Iniciar</button>
+  <button data-trip-target="button" data-action="click->trip#startRouteHideButton" class="demo__button d-flex align-items-center justify-content-center"><i class="fas fa-location-arrow" style="color: #000; margin-right: .9rem; font-size: 1.5rem"></i>Iniciar</button>
 </div>
