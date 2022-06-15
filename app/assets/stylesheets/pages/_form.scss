@@ -8,6 +8,7 @@
 
   .title-form {
     font-weight: bold;
+    color: #fff;
   }
 
   .logo-form {
@@ -16,13 +17,17 @@
   }
 }
 
+.form-label {
+  color: #fff;
+}
+
 .form-child {
   padding: 0 3rem;
 
   .submit-button {
     border: none;
     display: block;
-    margin: 1rem auto;
+    margin: 1.5rem auto;
     background-color: #FF7C00;
     color: #fff;
     border-radius: 10px;
