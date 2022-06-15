@@ -4,29 +4,39 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 10px;
+  position: relative;
   // display: flex;
   // align-items: center;
   // display: flex;
   // flex-direction: column;
+  padding: 20px;
 }
 
+// .students-info {
+//   position: relative;
+// }
+
 .card-product-student-index img {
-  height: 100px;
-  width: 100px;
+  height: 75px;
+  width: 75px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 .card-product-student-index h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  color:#ffa500;
 }
 
 .card-product-student-index p {
   font-size: 12px;
   line-height: 1.4;
   opacity: .7;
+  margin: 0;
+  font-size: 16px;
   // margin-bottom: 0;
   // margin-top: 8px;
   // margin: 8px auto 0 auto;
@@ -36,9 +46,13 @@
 
 .card-product-infos-student {
   max-height: 110px;
+  gap: 15px;
 }
 .card-product-student-index .card-product-infos-student-index {
-  padding: 16px;
+  padding: 10px 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 a.student-index-link:visited {
@@ -50,7 +64,20 @@ a.student-index-link:visited {
   padding: 10px !important;
 }
 
-.btn-student-edit {
+.student-index-link {
+  text-decoration: none;
   color: black;
-  font-size: 24px;
+}
+
+.card-product-student-index h2, .card-product-student-index .h2 {
+  font-size: 20px;
+}
+
+.card-product-infos-student-index-seq {
+  margin-right: 6px;
+}
+
+.students-info ul {
+  list-style-type: none;
+  padding: 0;
 }

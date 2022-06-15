@@ -1,3 +1,4 @@
+
 .demo__button {
   width: 15rem;
   height: 5rem;
@@ -35,4 +36,44 @@
     display: block;
     margin: 0 auto;
   }
+
+.btn-edit-student {
+  border-radius: 8px;
+  display: inline-block;
+//   font-weight: 400;
+  line-height: 1.5;
+  color: #6f6f6f;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+//   cursor: pointer;
+//   -webkit-user-select: none;
+//   -moz-user-select: none;
+//   -ms-user-select: none;
+//   user-select: none;
+  background-color: #FFF;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.btn-edit-student:hover {
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  transition: 0.3s;
+}
+
+.btn-generate-iti  {
+  border-radius: 8px;
+  display: inline-block;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  background-color: #FF7C00;
+  color: #fff;
 }

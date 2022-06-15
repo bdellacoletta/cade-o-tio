@@ -1,44 +1,58 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-xs-12">
-      <div id="logo-placeholder" class="mt-3 align-items-center">Logo</div>
-      <h1>Crianças</h1>
+      <div>
+        <h1 id="title-students" class="text-center my-5">Crianças</h1>
+      </div>
       <div  class="cards-student-index"
-            data-controller='sequence studentinfo'
+            data-controller='sequence studentinfo edit-student'
             data-sequence-url="/students/:id/move">
         <% @students.each do |student| %>
-          <%= link_to @student_path,  class: 'student-index-link mb-3',
-                                      data: { id: student.id }  do %>
-            <div class="card-product-student-index mb-3"
-            data-action="click->studentinfo#revealContent"
-            data-id="<%= student.id %>">
 
-              <div class="card-product-infos-student d-flex">
-                <img class="shadow m-1" src="https://images.unsplash.com/photo-1629872430082-93d8912beccf">
-                <div class="card-product-infos-student-index">
-                  <h2><%= student.child_name %></h2>
-                  <p><%= student.child_address %></p>
+          <div>
+            <div>
+              <%= link_to @student_path,  class: 'student-index-link mb-3',
+                                          data: { id: student.id }  do %>
+                <div class="card-product-student-index mb-3"
+                data-action="click->studentinfo#revealContent"
+                data-id="<%= student.id %>">
+                  <div class="card-product-infos-student d-flex">
+                    <%= image_tag "icon-student.svg" %>
+                    <div class="card-product-infos-student-index">
+                      <h2><%= student.child_name %></h2>
+                      <p><%= student.child_address %></p>
+                    </div>
+                  </div>
+                  <div class="students-info">
+                    <ul class="d-none mt-1" data-studentinfo-target="content"
+                                      data-id="<%= student.id %>">
+                      <hr>
+                      <li><p><i class="fas fa-child"></i> Nome: <%= student.child_name %></p></li>
+                      <hr>
+                      <li><p><i class="fas fa-map-marker-alt"></i> Endereço: <%= student.child_address %></p></li>
+                      <hr>
+                      <li><p><i class="fas fa-user"></i> Responsável: <%= student.parents_name %></p></li>
+                      <hr>
+                      <li><p><i class="fas fa-paper-plane"></i> Email: <%= student.parents_email %></p></li>
+                    </ul>
+                  </div>
                 </div>
-              </div>
-              <div class="students-info static">
-                <ul class="d-none mt-1" data-studentinfo-target="content"
-                                  data-id="<%= student.id %>">
-                  <li><p>Nome: <%= student.child_name %></p></li>
-                  <li><p>Endereço: <%= student.child_address %></p></li>
-                  <li><p>Responsável: <%= student.parents_name %></p></li>
-                  <li><p>Email: <%= student.parents_email %></p></li>
-                  <li><%= link_to student_path(student), class: 'btn-student-edit' do %>
-                    <i class="far fa-edit"></i>
-                  <% end %>
-                  </li>
-                </ul>
-              </div>
+              <% end %>
             </div>
-          <% end %>
+            <div>
+              <%= link_to edit_student_path(student), class: 'btn-student-edit d-none test',
+                                                      data: { studentinfo_target: "icon",
+                                                      id: student.id } do %>
+                <p class="btn btn-edit-student  w-100" data-action="click->edit-student#displayForm">
+                  Edite
+                </p>
+              <% end %>
+            </div>
+          </div>
         <% end %>
       </div>
       <div class="d-flex justify-content-center">
-        <%= link_to 'Gerar itinerário', itinerary_path(@itinerary), class: 'btn btn-primary my-3' %>
+        <%= link_to 'Gerar itinerário', itinerary_path(@itinerary), class: 'btn-generate-iti my-3 w-100' %>
       </div>
     </div>
   </div>
