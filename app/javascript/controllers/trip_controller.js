@@ -2,7 +2,7 @@ import { Controller } from "stimulus"
 import { csrfToken } from "@rails/ujs"
 
 export default class extends Controller {
-  static targets = []
+  static targets = ['button']
   static values = {
     id: Number
   }
@@ -217,6 +217,11 @@ export default class extends Controller {
     });
 
   };
+
+  startRouteHideButton() {
+    this.demo()
+    this.buttonTarget.classList.add('d-none')
+  }
 
 
   gps() {
