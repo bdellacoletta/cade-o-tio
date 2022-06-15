@@ -5,14 +5,12 @@
         <h1 id="title-students" class="text-center my-5">Crianças</h1>
       </div>
       <div  class="cards-student-index"
-            data-controller='sequence studentinfo edit-student'
+            data-controller='sequence studentinfo'
             data-sequence-url="/students/:id/move">
         <% @students.each do |student| %>
-
-          <div>
+          <div data-id="<%= student.id %>" >
             <div>
-              <%= link_to @student_path,  class: 'student-index-link mb-3',
-                                          data: { id: student.id }  do %>
+              <%= link_to student_path(student),  class: 'student-index-link mb-3' do %>
                 <div class="card-product-student-index mb-3"
                 data-action="click->studentinfo#revealContent"
                 data-id="<%= student.id %>">

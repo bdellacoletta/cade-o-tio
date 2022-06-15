@@ -15,16 +15,11 @@ export default class extends Controller {
       direction: 'vertical',
       onEnd: this.end.bind(this)
     })
-    // this.passengerTargets.forEach((passenger) => {
-    //   new Sortable(passenger, {
-    //       group: 'Sequence', // set both lists to same group
-    //       animation: 300,
-    //       onEnd: this.saveSequence
-    //   });
-    // });
+
   }
 
   end(event) {
+    console.log(event.item);
     let id = event.item.dataset.id
     // console.log(event.item);
     // console.log(event.currentTarget);
