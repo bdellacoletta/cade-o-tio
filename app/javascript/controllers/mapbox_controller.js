@@ -38,7 +38,8 @@ export default class extends Controller {
       this.#fitMapToMarkers();
     })
 
-    this.map.addControl(directions);
+    this.map.addControl(directions, 'top-left');
+    // document.querySelector("mapboxgl-control-container").style.display = "none";
     this.readCoordinates();
   }
 

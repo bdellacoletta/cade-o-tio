@@ -22,6 +22,7 @@ class StudentsController < ApplicationController
       mail = StudentMailer.with(student: @student).create_confirmation
       mail.deliver_now
       redirect_to student_path(@student)
+
     else
       render :new
     end

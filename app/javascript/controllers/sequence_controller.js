@@ -15,9 +15,6 @@ export default class extends Controller {
       direction: 'vertical',
       onEnd: this.end.bind(this)
     })
-
-
-
     // this.passengerTargets.forEach((passenger) => {
     //   new Sortable(passenger, {
     //       group: 'Sequence', // set both lists to same group
@@ -25,13 +22,12 @@ export default class extends Controller {
     //       onEnd: this.saveSequence
     //   });
     // });
-
   }
 
   end(event) {
     let id = event.item.dataset.id
-    console.log(event.item);
-    console.log(event.currentTarget);
+    // console.log(event.item);
+    // console.log(event.currentTarget);
     let data = new FormData()
 
     data.append("position", event.newIndex + 1)

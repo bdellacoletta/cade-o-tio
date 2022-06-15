@@ -12,7 +12,7 @@ export default class extends Controller {
 
   start() {
     if ("geolocation" in navigator) {
-      this.interval = setInterval(this.gps.bind(this), 1000)
+      this.interval = setInterval(this.gps.bind(this), 10000)
     } else {
       alert("I'm sorry, but geolocation services are not supported by your browser.");
     }

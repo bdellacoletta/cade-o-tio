@@ -1,3 +1,14 @@
+.form-control {
+  border-radius: 10px;
+  padding: .5rem;
+  border: .1px solid #3D3737;
+}
+
+.form-label {
+  color: #000;
+  font-weight: bold;
+}
+
 .mapboxgl-popup-close-button {
   display: none;
 }
@@ -25,8 +36,12 @@
 .mapboxgl-ctrl-geocoder {
   max-width: none;
   width: 100%;
-  border: 1px solid lightgrey;
+  border: .1px solid #3D3737;
   box-shadow: none;
+  background-color: #F4F4F4;
+  margin: 0;
+  border-radius: 10px;
+  padding: .2rem;
 
   .mapboxgl-ctrl-geocoder--button {
     display: none;
@@ -36,9 +51,12 @@
     display: none;
   }
 
+  .mapboxgl-ctrl-geocoder--mapboxgl-ctrl {
+    margin: 0;
+  }
+
   .mapboxgl-ctrl-geocoder--input {
     width: 100%;
-    background-color: #F5F2E4;
     border: none;
     padding: .5rem;
   }
@@ -64,5 +82,23 @@
   .mapboxgl-ctrl-geocoder--suggestion:hover {
     background-color: #3D3737;
     color: #F5F2E4;
+  }
+}
+
+.map {
+  width: 50vw;
+  height: 90vh;
+  position: relative;
+  display: block;
+  margin: 0 auto;
+}
+
+@media screen and(max-width: 600px) {
+  .map {
+    width: 100vw;
+    height: 92vh;
+    position: relative;
+    display: block;
+    margin: 0 auto;
   }
 }
