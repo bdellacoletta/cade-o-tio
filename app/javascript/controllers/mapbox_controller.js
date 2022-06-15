@@ -73,7 +73,7 @@ export default class extends Controller {
         .setLngLat([ data.longitude, data.latitude ])
         .addTo(this.map)
       })
-    this.interval = setInterval(this.moveCar.bind(this), 2000)
+    this.interval = setInterval(this.moveCar.bind(this), 1000)
   }
 
   moveCar() {
