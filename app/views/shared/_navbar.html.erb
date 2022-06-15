@@ -13,21 +13,27 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
+          <hr class="separator">
           <li class="nav-item active">
             <%= link_to "Olá, #{current_user.first_name}!", "#", class: "nav-link" %>
           </li>
+          <hr class="separator">
           <li class="nav-item">
             <%= link_to "Cadastrar criança", new_itinerary_student_path(@itinerary), class: "nav-link" %>
           </li>
+          <hr class="separator">
           <li class="nav-item">
             <%= link_to "Editar itinerário", itinerary_students_path(@itinerary), class: "nav-link" %>
           </li>
+          <hr class="separator">
           <li class="nav-item">
             <%= link_to "Visualizar itinerário", itinerary_path(@itinerary), class: "nav-link" %>
           </li>
+          <hr class="separator">
           <li class="nav-item">
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
           </li>
+          <hr class="separator">
         <% else %>
           <li class="nav-item">
             <%= link_to "Login", new_user_session_path, class: "nav-link" %>
