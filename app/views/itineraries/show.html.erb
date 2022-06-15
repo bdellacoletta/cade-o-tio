@@ -1,9 +1,10 @@
 
 <div class="map"
-  data-controller="mapbox"
+  data-controller="mapbox trip"
   data-mapbox-points-value="<%= @points.to_json %>"
   data-mapbox-markers-value="<%= @markers.to_json %>"
   data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
-  data-mapbox-id-value="<%= @itinerary.id %>">
-  <button class="demo__button d-flex align-items-center justify-content-center"><i class="fas fa-location-arrow" style="color: #000; margin-right: .9rem; font-size: 1.5rem"></i>Iniciar</button>
+  data-mapbox-id-value="<%= @itinerary.id %>"
+  data-trip-id-value="<%= @itinerary.id %>">
+  <button data-action="click->trip#demo" class="demo__button d-flex align-items-center justify-content-center"><i class="fas fa-location-arrow" style="color: #000; margin-right: .9rem; font-size: 1.5rem"></i>Iniciar</button>
 </div>

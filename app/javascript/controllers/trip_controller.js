@@ -213,7 +213,7 @@ export default class extends Controller {
     ]
 
     demoData.forEach((location, index) => {
-      setTimeout(() => { this.demoUpdate(location) }, 2000 * index);
+      setTimeout(() => { this.demoUpdate(location) }, 1000 * index);
     });
 
   };
