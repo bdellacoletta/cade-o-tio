@@ -72,7 +72,7 @@ export default class extends Controller {
         .setLngLat([ data.longitude, data.latitude ])
         .addTo(this.map)
       })
-    this.interval = setInterval(this.moveCar.bind(this), 10000)
+    this.interval = setInterval(this.moveCar.bind(this), 2000)
   }
 
   moveCar() {
@@ -93,6 +93,7 @@ export default class extends Controller {
         this.driverMarker = new mapboxgl.Marker(customMarker)
         .setLngLat([ data.longitude, data.latitude ])
         .addTo(this.map)
+        this.map.flyTo({center: [data.longitude, data.latitude]})
       })
     }
 }
