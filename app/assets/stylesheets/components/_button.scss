@@ -11,6 +11,28 @@
   position: absolute;
   background-color: #FF7C00;
   z-index: 1;
-  left: 90px;
-  bottom: 34px
+  left: 31%;
+  bottom: 34px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 600px) {
+  .demo__button {
+    width: 15rem;
+    height: 5rem;
+    border: none;
+    display: block;
+    color: #fff;
+    border-radius: 10px;
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    position: absolute;
+    background-color: #FF7C00;
+    z-index: 1;
+    left: 90px;
+    bottom: 34px;
+    display: block;
+    margin: 0 auto;
+  }
 }
