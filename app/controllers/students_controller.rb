@@ -21,7 +21,7 @@ class StudentsController < ApplicationController
     if @student.save
       mail = StudentMailer.with(student: @student).create_confirmation
       mail.deliver_now
-      redirect_to student_path(@student)
+      redirect_to itinerary_students_path(@student.itinerary_id)
 
     else
       render :new
