@@ -1,5 +1,5 @@
 class ItinerariesController < ApplicationController
-  skip_before_action :authenticate_user!, only: :show
+  skip_before_action :authenticate_user!, only: [:show, :fetch_coordinates]
 
   def show
     @itinerary = Itinerary.friendly.find(params[:id])
