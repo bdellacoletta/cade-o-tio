@@ -19,7 +19,7 @@ export default class extends Controller {
   }
 
   end(event) {
-    console.log(event.item);
+    // console.log(event.item);
     let id = event.item.dataset.id
     // console.log(event.item);
     // console.log(event.currentTarget);

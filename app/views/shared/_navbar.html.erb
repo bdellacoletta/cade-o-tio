@@ -4,33 +4,52 @@
       <%= image_tag "logo_completo.png" %>
     <% end %>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span>
-        <%= image_tag "onibus_avatarpng.png", class: "avatar" %>
-      </span>
-    </button>
+    <div class="d-flex">
+      <% if user_signed_in? %>
+        <span class="d-flex align-items-center">
+          <h4 id="greeting">Olá, <%= current_user.first_name %>!</h3>
+        </span>
+      <% end %>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="d-flex align-items-center">
+          <%= image_tag "onibus_avatarpng.png", class: "avatar" %>
+        </span>
+      </button>
+    </div>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Olá, #{current_user.first_name}!", "#", class: "nav-link" %>
-          </li>
+          <hr class="separator">
           <li class="nav-item">
-            <%= link_to "Cadastrar criança", new_itinerary_student_path(@itinerary), class: "nav-link" %>
+            <%= link_to new_itinerary_student_path(current_user.itinerary), class: "nav-link" do %>
+              <p><i class="fas fa-user-plus"></i> Cadastrar criança</p>
+            <% end %>
           </li>
+          <hr class="separator">
           <li class="nav-item">
-            <%= link_to "Editar itinerário", itinerary_students_path(@itinerary), class: "nav-link" %>
+            <%= link_to itinerary_students_path(current_user.itinerary), class: "nav-link" do %>
+              <p><i class="fas fa-edit"></i> Editar itinerário</p>
+            <% end %>
           </li>
+          <hr class="separator">
           <li class="nav-item">
-            <%= link_to "Visualizar itinerário", itinerary_path(@itinerary), class: "nav-link" %>
+            <%= link_to itinerary_path(current_user.itinerary), class: "nav-link" do %>
+              <p><i class="fas fa-eye"></i> Visualizar itinerário</p>
+            <% end %>
           </li>
+          <hr class="separator">
           <li class="nav-item">
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+            <%= link_to destroy_user_session_path, method: :delete, class: "nav-link" do %>
+              <p><i class="fas fa-sign-out-alt"></i> Log out</p>
+            <% end %>
           </li>
+          <hr class="separator">
         <% else %>
           <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+            <%= link_to new_user_session_path, class: "nav-link" do %>
+              <p><i class="fas fa-sign-in-alt"></i> Login</p>
+            <% end %>
           </li>
         <% end %>
       </ul>
