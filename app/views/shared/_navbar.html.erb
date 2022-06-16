@@ -22,19 +22,19 @@
         <% if user_signed_in? %>
           <hr class="separator">
           <li class="nav-item">
-            <%= link_to new_itinerary_student_path(@itinerary), class: "nav-link" do %>
+            <%= link_to new_itinerary_student_path(current_user.itinerary), class: "nav-link" do %>
               <p><i class="fas fa-user-plus"></i> Cadastrar criança</p>
             <% end %>
           </li>
           <hr class="separator">
           <li class="nav-item">
-            <%= link_to itinerary_students_path(@itinerary), class: "nav-link" do %>
+            <%= link_to itinerary_students_path(current_user.itinerary), class: "nav-link" do %>
               <p><i class="fas fa-edit"></i> Editar itinerário</p>
             <% end %>
           </li>
           <hr class="separator">
           <li class="nav-item">
-            <%= link_to itinerary_path(@itinerary), class: "nav-link" do %>
+            <%= link_to itinerary_path(current_user.itinerary), class: "nav-link" do %>
               <p><i class="fas fa-eye"></i> Visualizar itinerário</p>
             <% end %>
           </li>
