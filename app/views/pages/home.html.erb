@@ -7,12 +7,13 @@
     <div class="col-12 col-sm-4 col-sm-offset-4">
       <div class="home-itens">
         <div class="secundary__buttons">
-          <%= link_to itinerary_students_path(@itinerary), class: "secondary__button" do %>
-            <i class="fas fa-user-plus"></i>
-            <p class="m-0">Criança</p>
+          <%= link_to new_itinerary_student_path(@itinerary, @student), class: "secondary__button" do %>
+            <i class="fas fa-user-plus" style="font-size: 2.5rem; margin-left: .7rem"></i>
+            <p class="m-0" style="font-size: 1.2rem">Criança</p>
           <% end %>
-          <%= link_to new_itinerary_student_path(@itinerary), class: "tertiary__button" do %>
-            <p><i class="fas fa-edit"></i> Editar itinerário</p>
+          <%= link_to itinerary_students_path(@itinerary), class: "tertiary__button" do %>
+            <i class="fas fa-edit" style="font-size: 2.5rem; margin-bottom: .5rem; margin-left: .5rem"></i>
+            <p style="margin: 0; font-size: 1.2rem">Editar itinerário</p>
           <% end %>
         </div>
         <%= link_to itinerary_path(@itinerary), class: "primary__button" do %>
