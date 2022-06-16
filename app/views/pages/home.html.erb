@@ -6,9 +6,19 @@
   <div class="row justify-content-center">
     <div class="col-12 col-sm-4 col-sm-offset-4">
       <div class="home-itens">
-        <%= link_to "Cadastrar criança", new_itinerary_student_path(@itinerary), class: "btn btn-home" %>
-        <%= link_to "Editar itinerário", itinerary_students_path(@itinerary), class: "btn btn-home mt-4" %>
-        <%= link_to "Visualizar itinerário", itinerary_path(@itinerary), class: "btn btn-home mt-4" %>
+        <div class="secundary__buttons">
+          <%= link_to itinerary_students_path(@itinerary), class: "secondary__button" do %>
+            <i class="fas fa-user-plus"></i>
+            <p class="m-0">Criança</p>
+          <% end %>
+          <%= link_to new_itinerary_student_path(@itinerary), class: "tertiary__button" do %>
+            <p><i class="fas fa-edit"></i> Editar itinerário</p>
+          <% end %>
+        </div>
+        <%= link_to itinerary_path(@itinerary), class: "primary__button" do %>
+          <i class="fas fa-map-marked-alt" style="font-size: 50px; margin: 10px 5px 25px 9px"></i>
+          <p class="m-0">Visualizar itinerário</p>
+        <% end %>
       </div>
     </div>
   </div>
