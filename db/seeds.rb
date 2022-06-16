@@ -29,8 +29,8 @@ Student.create!(
   parents_name: 'Gina',
   parents_email: 'gina@teste.com',
   itinerary_id: 1,
-  latitude_child: -23.555640193166862,
-  longitude_child: -46.678308087498024
+  latitude_child: -23.555590480904094,
+  longitude_child: -46.67832740954156
 )
 
 Student.create!(
@@ -40,8 +40,8 @@ Student.create!(
   parents_name: 'Carol',
   parents_email: 'carol@teste.com',
   itinerary_id: 1,
-  latitude_child: -23.552014492500938,
-  longitude_child: -46.68310539905946
+  latitude_child: -23.55193468398664,
+  longitude_child: -46.68308888027594
 )
 
 # Itinerary.create
@@ -57,8 +57,8 @@ Student.create!(
   parents_name: 'Lucas',
   parents_email: 'lucas@teste.com',
   itinerary_id: 1,
-  latitude_child: -23.550784727962498,
-  longitude_child: -46.68281507663113
+  latitude_child: -23.55079099545856,
+  longitude_child: -46.682790605050776
 )
 
 Student.create!(
@@ -68,8 +68,8 @@ Student.create!(
   parents_name: 'Carlos',
   parents_email: 'carlos@teste.com',
   itinerary_id: 1,
-  latitude_child: -23.550103179004772,
-  longitude_child: -46.686551485405694
+  latitude_child: -23.550102530305402,
+  longitude_child: -46.68656715509703
 )
 
 Student.create!(
@@ -79,8 +79,8 @@ Student.create!(
   parents_name: 'Jorge',
   parents_email: 'jorge@teste.com',
   itinerary_id: 1,
-  latitude_child: -23.552475874859844,
-  longitude_child: -46.691296554989606
+  latitude_child: -23.552423626978964,
+  longitude_child: -46.691330757996276
 )
 
 Student.create!(
@@ -90,6 +90,17 @@ Student.create!(
   parents_name: 'Beth',
   parents_email: 'beth@teste.com',
   itinerary_id: 1,
-  latitude_child: -23.5525082,
-  longitude_child: -46.6888568
+  latitude_child: -23.55246296724734,
+  longitude_child: -46.68888458353451
+)
+
+Student.create!(
+  child_name: 'Enzo',
+  child_address: 'praça horacio sabino, 161, Pinheiros - Sao Paulo',
+  position: 7,
+  parents_name: 'Leonardo',
+  parents_email: 'leo@teste.com',
+  itinerary_id: 1,
+  latitude_child: -23.5513781,
+  longitude_child: -46.6843846
 )
