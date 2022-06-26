@@ -8,7 +8,7 @@
 <a href="http://www.cadeotio.com.br"><h3 align="center">Cadê o tio?</h3></a>
 
   <p align="justify">
-    Aplicativo de geolocalização para rastrear a posição do motorista da van escolar. O objetivo é que os pais possam visualizar em tempo real em qual ponto do itinerário o motorista está e assim poderem preparar a criança com antecedência evitando atrasos. Além disso, os pais podem se sentir mais seguros em saber se a criança chegou na escola, em qual parada está etc.
+    Aplicativo de geolocalização para rastrear a posição do motorista da van escolar. O objetivo é que os pais possam visualizar em tempo real em qual ponto do itinerário o motorista está e assim possam preparar a criança com antecedência evitando atrasos. Além disso, os pais podem se sentir mais seguros em saber se a criança chegou na escola, em qual parada está etc.
     <br />
     <a href="https://youtu.be/e3oe2wE7zRA?t=5393">View Demo</a>
   </p>
