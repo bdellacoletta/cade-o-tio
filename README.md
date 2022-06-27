@@ -66,5 +66,5 @@ Esse aplicativo foi desenvolvido pensando no uso do motorista que poderia utiliz
 
 Branca - brancasdc@gmail.com<br>
 Bruno - brunoshingai@gmail.com<br>
-Igor - assis.ricci@gmail.com
+Igor - assis.ricci@gmail.com<br>
 Matheus - matheusfortini7@gmail.com
